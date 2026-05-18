@@ -168,11 +168,18 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
   min-height:calc(78vh - var(--header-h));
   max-height:680px;
   display:flex;
-  align-items:center;
+  align-items:flex-end;
   overflow:hidden;
-  background:#0a0a0a;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 30%, #1a3a26 0%, transparent 60%),
+    linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
 }
-@media (max-width:767px){.hero{min-height:480px}}
+@media (max-width:767px){
+  .hero{
+    min-height:520px;
+    max-height:none;
+  }
+}
 
 .hero-bg{
   position:absolute;inset:0;z-index:1;
@@ -180,52 +187,73 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
 .hero-bg img{
   width:100%;height:100%;object-fit:cover;display:block;
 }
+.hero-bg img:not([src]),.hero-bg img[src=""]{display:none}
 .hero-bg::after{
   content:"";
   position:absolute;inset:0;
   background:
-    linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.85) 100%),
-    linear-gradient(90deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.25) 60%,transparent 100%);
+    linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.88) 100%);
 }
 .hero::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:80px;z-index:2;
+  content:"";position:absolute;left:0;right:0;bottom:0;height:60px;z-index:2;
   background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;
 }
 
 .hero-inner{
   position:relative;z-index:3;width:100%;
-  padding:60px 0 80px;
+  padding:80px 0 70px;
 }
-@media (max-width:767px){.hero-inner{padding:40px 0 60px}}
+@media (max-width:767px){.hero-inner{padding:50px 0 50px}}
 
 .hero-content{
   max-width:680px;
+  text-align:left;
+}
+@media (max-width:767px){
+  .hero-content{
+    text-align:center;
+    margin:0 auto;
+  }
 }
 
 .hero h1{
   font-weight:900;
-  font-size:clamp(40px,6.8vw,80px);
-  line-height:1;
+  font-size:clamp(36px,6vw,72px);
+  line-height:1.02;
   letter-spacing:-.035em;
   color:#fff;
-  margin-bottom:18px;
-  text-shadow:0 2px 24px rgba(0,0,0,.4);
+  margin-bottom:16px;
+  text-shadow:0 2px 24px rgba(0,0,0,.45);
+}
+@media (max-width:767px){
+  .hero h1{font-size:clamp(32px,8vw,46px);line-height:1.05}
 }
 .hero h1 .g{
   color:var(--green-l);
 }
 
 .hero p.hero-sub{
-  font-size:clamp(16px,1.7vw,20px);
-  color:rgba(255,255,255,.9);
-  line-height:1.45;
-  margin-bottom:32px;
-  max-width:520px;
+  font-size:clamp(15px,1.5vw,18px);
+  color:rgba(255,255,255,.88);
+  line-height:1.5;
+  margin-bottom:28px;
+  max-width:480px;
   font-weight:500;
   text-shadow:0 1px 8px rgba(0,0,0,.3);
 }
+@media (max-width:767px){
+  .hero p.hero-sub{
+    font-size:14.5px;
+    margin-left:auto;margin-right:auto;
+    margin-bottom:24px;
+  }
+}
 
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+@media (max-width:767px){
+  .hero-cta{justify-content:center;gap:8px}
+  .hero-cta .btn{padding:12px 18px;font-size:14px;flex:1 1 auto;min-width:140px;max-width:220px}
+}
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
@@ -252,21 +280,23 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
 }
 .promo-inner{
   display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
-  padding:36px 0;position:relative;z-index:2;
+  padding:28px 0;position:relative;z-index:2;
 }
-@media (max-width:767px){.promo-inner{grid-template-columns:1fr;gap:20px;padding:28px 0;text-align:center}}
+@media (max-width:767px){
+  .promo-inner{grid-template-columns:1fr;gap:16px;padding:24px 0;text-align:center}
+  .promo-actions .btn{padding:11px 16px;font-size:13.5px}
+}
 .promo::before{
   content:"";position:absolute;right:-100px;top:50%;transform:translateY(-50%);
   width:380px;height:380px;border-radius:50%;
-  background:radial-gradient(circle,var(--green) 0%,transparent 65%);opacity:.25;
+  background:radial-gradient(circle,var(--green) 0%,transparent 65%);opacity:.22;
 }
 .promo-text h3{
-  font-weight:800;font-size:clamp(20px,2.6vw,28px);line-height:1.2;letter-spacing:-.02em;margin-bottom:8px;
+  font-weight:800;font-size:clamp(18px,2.4vw,26px);line-height:1.2;letter-spacing:-.02em;margin-bottom:6px;
 }
 .promo-text h3 .g{color:var(--green-l)}
-.promo-text p{color:rgba(255,255,255,.7);font-size:14.5px;line-height:1.5}
+.promo-text p{color:rgba(255,255,255,.7);font-size:14px;line-height:1.5}
 .promo-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.promo .btn-green{box-shadow:0 0 0 4px rgba(0,166,81,.2)}
 
 /* ========== TRUST STRIP ========== */
 .tstrip{background:var(--bg-2);padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -659,7 +689,7 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
 <!-- HERO (фото на фоне, минимум текста) -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="/images/hero-bg.jpg" alt="">
+    <img src="/images/hero-bg.jpg" alt="" onerror="this.style.display='none'">
   </div>
   <div class="wrap hero-inner">
     <div class="hero-content">
