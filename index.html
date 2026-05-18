@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Sanitex — санитарная обработка и дезинфекция в Алматы</title>
+<meta name="description" content="Sanitex — санитарная обработка помещений в Алматы и области. Уничтожение клопов, тараканов, грызунов, плесени. Договор, гарантия до 12 месяцев. +7 707 906 2810">
+<meta name="keywords" content="Sanitex, санитекс, дезинфекция Алматы, дезинсекция, дератизация, уничтожение клопов, тараканов, обработка от насекомых, Алматинская область">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sanitex.kz/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sanitex · Санитарная обработка в Алматы">
+<meta property="og:description" content="Точечное уничтожение вредителей. Сертификаты, договор, гарантия до 12 месяцев. Работаем по Алматы и области круглосуточно.">
+<meta property="og:image" content="/images/og.jpg">
+<meta property="og:url" content="https://sanitex.kz/">
+<meta property="og:locale" content="ru_RU">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+<!-- Fonts: distinctive pairing -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PestControlService",
+  "name": "Sanitex",
+  "@id": "https://sanitex.kz/",
+  "url": "https://sanitex.kz/",
+  "telephone": "+77079062810",
+  "priceRange": "₸₸",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Алматы",
+    "addressCountry": "KZ"
+  },
+  "areaServed": ["Алматы","Алматинская область"],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+}
+</script>
+
+<style>
+/* ========================================================
+   SANITEX — clinical / precision aesthetic
+   Palette: black + cream-white + one sanitary green accent
+   ======================================================== */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-weight:400;line-height:1.55;color:var(--ink);background:var(--bg);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  width:100%;max-width:100vw;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+::selection{background:var(--green);color:#000}
+
+/* ---------- DESIGN TOKENS ---------- */
+:root{
+  --bg:#FAFAF6;
+  --bg-2:#F1F1EB;
+  --bg-3:#E7E7DF;
+  --ink:#0B0B0A;
+  --ink-2:#23231F;
+  --ink-3:#56564E;
+  --mute:#8A8A80;
+  --line:#DCDCD2;
+  --line-2:#CACAB8;
+  --black:#0B0B0A;
+  --black-2:#16161A;
+  --black-3:#1F1F23;
+  --green:#00D26A;
+  --green-d:#00A856;
+  --green-l:#4DFAA0;
+  --green-tint:#E0FBED;
+  --r:4px;
+  --container:1320px;
+  --header-h:68px;
+  --tx-ease:cubic-bezier(.2,.7,.2,1);
+}
+
+/* ---------- LAYOUT ---------- */
+.wrap{width:100%;max-width:var(--container);margin:0 auto;padding:0 28px}
+@media (max-width:600px){.wrap{padding:0 18px}}
+section{padding:96px 0;position:relative}
+@media (max-width:767px){section{padding:64px 0}}
+
+/* Section meta - monospace label like blueprint */
+.s-meta{
+  display:flex;align-items:center;gap:14px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:28px;
+}
+.s-meta::before{
+  content:"";width:36px;height:1px;background:currentColor;
+}
+.s-meta .num{color:var(--green);font-weight:600}
+
+.s-title{
+  font-family:'Bricolage Grotesque',serif;font-weight:700;
+  font-size:clamp(38px,5.5vw,76px);line-height:.96;letter-spacing:-.03em;
+  color:var(--ink);max-width:920px;
+}
+.s-title .acc{color:var(--green);font-style:italic;font-weight:500}
+.s-title em{font-style:italic;font-weight:500;color:var(--ink-3)}
+.s-lead{font-size:17px;color:var(--ink-3);max-width:620px;margin-top:24px;line-height:1.55}
+
+/* ---------- SCROLL PROGRESS ---------- */
+.scroll-bar{position:fixed;top:0;left:0;height:2px;width:0%;background:var(--green);z-index:1001;transition:width .1s linear}
+
+/* ---------- HEADER ---------- */
+header{
+  position:sticky;top:0;z-index:900;height:var(--header-h);
+  background:var(--bg);border-bottom:1px solid var(--line);
+}
+header.scrolled{box-shadow:0 1px 0 var(--line)}
+.hrow{display:flex;align-items:center;justify-content:space-between;height:100%;gap:24px}
+
+.brand{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Bricolage Grotesque',serif;font-weight:700;font-size:24px;letter-spacing:-.04em;
+  color:var(--ink);
+}
+.brand-dot{
+  width:14px;height:14px;background:var(--green);border-radius:50%;flex-shrink:0;
+  box-shadow:0 0 0 4px rgba(0,210,106,.18);
+}
+.brand-name{display:flex;align-items:baseline;gap:0}
+.brand-name .x{color:var(--green)}
+.brand-tag{
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--mute);margin-left:8px;line-height:1;
+  border-left:1px solid var(--line);padding-left:8px;
+}
+@media (max-width:600px){.brand-tag{display:none}}
+
+nav.nav{display:flex;gap:4px;align-items:center}
+nav.nav a{
+  padding:8px 12px;font-size:13.5px;font-weight:500;color:var(--ink-2);
+  position:relative;letter-spacing:-.005em;
+}
+nav.nav a::after{
+  content:"";position:absolute;left:12px;right:12px;bottom:4px;height:1px;
+  background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--tx-ease);
+}
+nav.nav a:hover::after{transform:scaleX(1)}
+
+.h-right{display:flex;align-items:center;gap:10px}
+.phone-mini{
+  display:inline-flex;align-items:center;gap:10px;padding:9px 16px 9px 12px;
+  background:var(--ink);color:var(--bg);border-radius:999px;
+  font-size:13px;font-weight:600;font-feature-settings:"tnum";
+  transition:background .25s ease, transform .25s ease;
+}
+.phone-mini:hover{background:var(--green);color:var(--ink);transform:translateY(-1px)}
+.phone-mini svg{width:14px;height:14px}
+.phone-mini .pulse{
+  width:8px;height:8px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 0 0 var(--green);animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(0,210,106,.6)}
+  70%{box-shadow:0 0 0 8px rgba(0,210,106,0)}
+  100%{box-shadow:0 0 0 0 rgba(0,210,106,0)}
+}
+
+.burger{
+  display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:999px;
+  align-items:center;justify-content:center;background:var(--bg);
+}
+.burger svg{width:18px;height:18px}
+
+@media (max-width:1023px){nav.nav{display:none}.burger{display:inline-flex}}
+@media (max-width:520px){.phone-mini span{display:none}.phone-mini{padding:9px 12px}}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:var(--black);color:var(--bg);padding:0;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 90% 70% at 30% 50%,#000 30%,transparent 80%);
+  -webkit-mask-image:radial-gradient(ellipse 90% 70% at 30% 50%,#000 30%,transparent 80%);
+  pointer-events:none;
+}
+.hero-blob{
+  position:absolute;right:-200px;top:-200px;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,210,106,.35),rgba(0,210,106,0) 60%);
+  filter:blur(40px);pointer-events:none;
+}
+.hero-inner{
+  position:relative;z-index:2;padding:80px 0 64px;
+  display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:end;
+}
+@media (max-width:1100px){.hero-inner{grid-template-columns:1fr;padding:70px 0 56px}}
+
+.hero-lbl{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--green-l);margin-bottom:32px;
+}
+.hero-lbl::before{
+  content:"";width:8px;height:8px;background:var(--green);border-radius:50%;
+  box-shadow:0 0 0 4px rgba(0,210,106,.2);
+}
+.hero-lbl .sep{color:rgba(255,255,255,.35);font-family:inherit}
+
+h1.hero-h{
+  font-family:'Bricolage Grotesque',serif;font-weight:700;
+  font-size:clamp(44px,7.5vw,118px);line-height:.92;letter-spacing:-.045em;color:var(--bg);
+  max-width:1100px;
+}
+h1.hero-h .acc{
+  color:var(--green);font-style:italic;font-weight:500;display:inline-block;
+}
+h1.hero-h .underline{
+  position:relative;display:inline-block;
+}
+h1.hero-h .underline::after{
+  content:"";position:absolute;left:0;right:0;bottom:.08em;height:.12em;
+  background:var(--green);opacity:.35;border-radius:2px;
+}
+
+.hero-sub{
+  font-size:17px;line-height:1.55;color:rgba(255,255,255,.7);
+  max-width:540px;margin-top:32px;
+}
+.hero-sub strong{color:var(--bg);font-weight:600}
+
+.hero-cta{display:flex;gap:10px;margin-top:36px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 26px;border-radius:999px;font-weight:600;font-size:14.5px;
+  letter-spacing:-.005em;white-space:nowrap;border:1px solid transparent;
+  transition:transform .25s var(--tx-ease), background .25s ease, color .25s ease, border-color .25s ease;
+}
+.btn-green{background:var(--green);color:var(--ink);}
+.btn-green:hover{background:var(--green-l);transform:translateY(-1px)}
+.btn-ghost-d{background:transparent;color:var(--bg);border-color:rgba(255,255,255,.25)}
+.btn-ghost-d:hover{border-color:var(--bg);background:rgba(255,255,255,.05)}
+.btn-ghost-l{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn-ghost-l:hover{border-color:var(--ink);background:var(--bg-2)}
+.btn-ink{background:var(--ink);color:var(--bg);}
+.btn-ink:hover{background:var(--black-2);transform:translateY(-1px)}
+
+/* hero right card */
+.hero-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;padding:28px;backdrop-filter:blur(10px);
+}
+.hc-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.hc-row:last-child{border-bottom:0}
+.hc-k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.hc-v{font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:18px;color:var(--bg);text-align:right}
+.hc-v .g{color:var(--green-l)}
+.hc-foot{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:rgba(255,255,255,.6);line-height:1.5}
+
+/* Hero bottom strip */
+.hero-strip{
+  position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.08);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.hero-strip > div{
+  padding:24px 28px;border-right:1px solid rgba(255,255,255,.08);
+  display:flex;flex-direction:column;gap:6px;
+}
+.hero-strip > div:last-child{border-right:0}
+.hero-strip .k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.hero-strip .v{font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:22px;color:var(--bg);letter-spacing:-.02em}
+.hero-strip .v .g{color:var(--green)}
+@media (max-width:767px){.hero-strip{grid-template-columns:repeat(2,1fr)}.hero-strip > div{border-bottom:1px solid rgba(255,255,255,.08)}.hero-strip > div:nth-child(2){border-right:0}}
+
+/* ---------- MARQUEE ---------- */
+.marq{
+  background:var(--green);color:var(--ink);padding:18px 0;overflow:hidden;
+  border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+}
+.marq-track{
+  display:flex;gap:48px;white-space:nowrap;animation:marq 30s linear infinite;
+  font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:20px;letter-spacing:-.01em;
+}
+.marq-track span{display:inline-flex;align-items:center;gap:48px}
+.marq-track span::after{content:"●";color:var(--ink);font-size:10px}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- SERVICES ---------- */
+.svc-section{background:var(--bg);position:relative}
+.svc-head{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;margin-bottom:56px}
+@media (max-width:767px){.svc-head{grid-template-columns:1fr}}
+.svc-count{
+  font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:78px;line-height:1;color:var(--ink);
+  letter-spacing:-.04em;
+}
+.svc-count .small{font-size:14px;font-family:'JetBrains Mono',monospace;color:var(--ink-3);letter-spacing:.15em;text-transform:uppercase;font-weight:500;display:block;margin-top:6px}
+
+.svc-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:1px solid var(--ink);border-left:1px solid var(--ink);
+}
+@media (max-width:1023px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+.svc{
+  position:relative;padding:32px 24px 28px;
+  border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);
+  background:var(--bg);cursor:pointer;overflow:hidden;
+  transition:background .35s var(--tx-ease);
+  display:flex;flex-direction:column;gap:14px;min-height:240px;
+}
+.svc::before{
+  content:"";position:absolute;inset:0;background:var(--ink);transform:translateY(100%);
+  transition:transform .45s var(--tx-ease);z-index:0;
+}
+.svc:hover::before{transform:translateY(0)}
+.svc > *{position:relative;z-index:1;transition:color .35s var(--tx-ease)}
+.svc:hover *{color:var(--bg) !important}
+.svc:hover .svc-num{color:var(--green) !important}
+
+.svc-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--mute);font-weight:500}
+.svc-glyph{
+  font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:46px;line-height:1;color:var(--green);
+  letter-spacing:-.03em;margin-top:auto;
+}
+.svc-name{font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:20px;line-height:1.1;color:var(--ink);letter-spacing:-.015em}
+.svc-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+.svc-arr{
+  position:absolute;top:24px;right:24px;width:30px;height:30px;border-radius:50%;
+  border:1px solid var(--line-2);display:grid;place-items:center;
+  transition:all .35s var(--tx-ease);
+}
+.svc:hover .svc-arr{background:var(--green);border-color:var(--green);transform:rotate(-45deg)}
+.svc-arr svg{width:14px;height:14px;color:var(--ink-2);transition:color .35s var(--tx-ease)}
+.svc:hover .svc-arr svg{color:var(--ink)}
+
+/* ---------- METHODS (dark section) ---------- */
+.methods{background:var(--black);color:var(--bg);position:relative;overflow:hidden}
+.methods::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 50% at 80% 0%,rgba(0,210,106,.15),transparent 60%);
+  pointer-events:none;
+}
+.methods .s-meta{color:rgba(255,255,255,.5)}
+.methods .s-title{color:var(--bg)}
+.methods .s-lead{color:rgba(255,255,255,.7)}
+
+.met-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:56px;border-top:1px solid rgba(255,255,255,.12)}
+@media (max-width:767px){.met-grid{grid-template-columns:1fr}}
+.met{
+  padding:36px 32px;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12);
+  position:relative;transition:background .35s var(--tx-ease);
+}
+.met:nth-child(2n){border-right:0}
+@media (max-width:767px){.met{border-right:0}}
+.met:hover{background:rgba(0,210,106,.06)}
+.met-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.met-no{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--green);font-weight:500;letter-spacing:.1em}
+.met-name{font-family:'Bricolage Grotesque',serif;font-size:30px;font-weight:600;line-height:1.05;letter-spacing:-.02em;color:var(--bg)}
+.met-name em{color:var(--green);font-style:italic;font-weight:500}
+.met-desc{font-size:15px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:22px;max-width:540px}
+.met-specs{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;padding-top:18px;border-top:1px dashed rgba(255,255,255,.18)}
+.met-specs > div{display:flex;flex-direction:column;gap:4px}
+.met-specs .k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.met-specs .v{font-size:13.5px;color:var(--bg);font-weight:500}
+
+/* ---------- WHY (light, editorial) ---------- */
+.why{background:var(--bg-2);position:relative}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line-2);border-left:1px solid var(--line-2)}
+@media (max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.why-grid{grid-template-columns:1fr}}
+.why-i{
+  padding:36px 30px;border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);
+  background:var(--bg-2);transition:background .3s ease;position:relative;
+}
+.why-i:hover{background:var(--bg)}
+.why-no{
+  font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:64px;line-height:.9;
+  color:var(--ink);letter-spacing:-.04em;margin-bottom:16px;
+  display:inline-flex;align-items:baseline;gap:6px;
+}
+.why-no .dot{width:10px;height:10px;background:var(--green);border-radius:50%;margin-bottom:8px}
+.why-h{font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:21px;line-height:1.15;color:var(--ink);margin-bottom:10px;letter-spacing:-.015em}
+.why-p{font-size:14.5px;color:var(--ink-3);line-height:1.6}
+
+/* ---------- PROCESS ---------- */
+.proc{background:var(--bg)}
+.proc-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  margin-top:56px;position:relative;
+}
+@media (max-width:1023px){.proc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.proc-grid{grid-template-columns:1fr}}
+
+.step{
+  padding:32px 24px 36px;border-right:1px solid var(--line-2);position:relative;
+}
+.step:last-child{border-right:0}
+@media (max-width:1023px){.step:nth-child(2n){border-right:0}.step{border-bottom:1px solid var(--line-2)}}
+.step-no{
+  font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--green);
+  letter-spacing:.1em;margin-bottom:18px;display:flex;align-items:center;gap:10px;
+}
+.step-no::after{content:"";flex:1;height:1px;background:var(--line-2)}
+.step-h{font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:22px;color:var(--ink);margin-bottom:10px;letter-spacing:-.015em;line-height:1.1}
+.step-p{font-size:14px;color:var(--ink-3);line-height:1.6}
+.step-time{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute);letter-spacing:.1em;margin-top:18px}
+
+/* ---------- B2B ---------- */
+.b2b{background:var(--black);color:var(--bg);position:relative;overflow:hidden}
+.b2b::before{
+  content:"";position:absolute;left:-150px;bottom:-150px;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,210,106,.2),transparent 60%);filter:blur(40px);
+}
+.b2b .s-meta{color:rgba(255,255,255,.5)}
+.b2b .s-meta::before{background:rgba(255,255,255,.5)}
+.b2b .s-title{color:var(--bg)}
+.b2b-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;margin-top:56px;align-items:start;position:relative;z-index:1}
+@media (max-width:900px){.b2b-grid{grid-template-columns:1fr;gap:48px}}
+
+.b2b-list{list-style:none;display:grid;gap:2px}
+.b2b-list li{
+  display:grid;grid-template-columns:60px 1fr;gap:18px;align-items:start;
+  padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1);
+}
+.b2b-list li:first-child{border-top:1px solid rgba(255,255,255,.1)}
+.b2b-list .ix{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green);letter-spacing:.12em;padding-top:3px}
+.b2b-list .tx{font-size:15px;color:rgba(255,255,255,.85);line-height:1.5}
+.b2b-list .tx b{color:var(--bg);font-weight:600}
+
+.b2b-cta{padding:36px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:16px;backdrop-filter:blur(10px)}
+.b2b-cta h3{font-family:'Bricolage Grotesque',serif;font-size:28px;font-weight:600;line-height:1.1;color:var(--bg);margin-bottom:14px;letter-spacing:-.02em}
+.b2b-cta h3 em{color:var(--green);font-style:italic;font-weight:500}
+.b2b-cta p{color:rgba(255,255,255,.7);font-size:15px;margin-bottom:24px;line-height:1.55}
+.b2b-docs{display:flex;flex-wrap:wrap;gap:6px;margin-top:24px}
+.b2b-docs span{
+  padding:6px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:rgba(255,255,255,.85);text-transform:uppercase;
+}
+
+/* ---------- GEO ---------- */
+.geo{background:var(--bg-2)}
+.geo-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
+@media (max-width:900px){.geo-wrap{grid-template-columns:1fr;gap:36px}}
+.geo-zones{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.zone{
+  padding:10px 18px;background:var(--bg);border:1px solid var(--line-2);border-radius:999px;
+  font-size:13.5px;font-weight:500;color:var(--ink-2);cursor:default;
+  transition:all .25s ease;display:inline-flex;align-items:center;gap:8px;
+}
+.zone::before{content:"";width:6px;height:6px;background:var(--green);border-radius:50%}
+.zone:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);transform:translateY(-1px)}
+.zone:hover::before{background:var(--green-l)}
+
+.geo-note{
+  margin-top:24px;padding:18px 22px;background:var(--bg);border:1px dashed var(--line-2);border-radius:12px;
+  font-size:13.5px;color:var(--ink-3);line-height:1.55;
+}
+.geo-note strong{color:var(--ink);font-weight:600}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--bg)}
+.faq-wrap{margin-top:56px;border-top:1px solid var(--line-2)}
+.faq-i{border-bottom:1px solid var(--line-2);transition:background .3s ease}
+.faq-i.open{background:var(--bg-2)}
+.faq-q{
+  width:100%;text-align:left;padding:26px 0;display:grid;grid-template-columns:60px 1fr 40px;gap:20px;align-items:center;
+  font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:19px;color:var(--ink);letter-spacing:-.015em;
+}
+.faq-q .qn{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);font-weight:500;letter-spacing:.1em}
+.faq-q .qpl{
+  width:32px;height:32px;border-radius:50%;background:var(--bg-2);
+  display:grid;place-items:center;position:relative;transition:all .35s var(--tx-ease);
+  justify-self:end;
+}
+.faq-q .qpl::before,.faq-q .qpl::after{content:"";position:absolute;background:var(--ink);transition:transform .35s var(--tx-ease)}
+.faq-q .qpl::before{width:12px;height:1.5px}
+.faq-q .qpl::after{width:1.5px;height:12px}
+.faq-i.open .qpl{background:var(--green)}
+.faq-i.open .qpl::after{transform:rotate(90deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 80px 0 80px}
+.faq-i.open .faq-a{max-height:400px;padding-bottom:28px}
+.faq-a p{color:var(--ink-3);font-size:15px;line-height:1.7;max-width:760px}
+.faq-a p a{color:var(--green-d);font-weight:600;border-bottom:1px solid var(--green-d)}
+@media (max-width:600px){
+  .faq-q{grid-template-columns:1fr 32px;gap:12px;font-size:16px;padding:22px 0}
+  .faq-q .qn{display:none}
+  .faq-a{padding:0 0 0 0}
+}
+
+/* ---------- FINAL CTA ---------- */
+.fc{background:var(--black);color:var(--bg);padding:120px 0;position:relative;overflow:hidden}
+.fc::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 100%,rgba(0,210,106,.25),transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 0%,rgba(0,210,106,.1),transparent 60%);
+}
+.fc-inner{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}
+.fc h2{
+  font-family:'Bricolage Grotesque',serif;font-weight:700;
+  font-size:clamp(40px,7vw,96px);line-height:.95;letter-spacing:-.035em;color:var(--bg);
+  margin-bottom:28px;
+}
+.fc h2 em{color:var(--green);font-style:italic;font-weight:500}
+.fc p{font-size:18px;color:rgba(255,255,255,.7);margin-bottom:40px;line-height:1.5;max-width:580px;margin-left:auto;margin-right:auto}
+.fc-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.fc .btn-ghost-d{color:var(--bg);border-color:rgba(255,255,255,.25)}
+
+.fc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:80px;position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.12)}
+@media (max-width:767px){.fc-cards{grid-template-columns:1fr}}
+.fc-card{
+  padding:32px 28px;border-right:1px solid rgba(255,255,255,.12);text-align:left;
+  display:flex;flex-direction:column;gap:10px;transition:background .3s ease;
+}
+.fc-card:last-child{border-right:0}
+@media (max-width:767px){.fc-card{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}}
+.fc-card:hover{background:rgba(255,255,255,.03)}
+.fc-card .k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.fc-card .v{font-family:'Bricolage Grotesque',serif;font-size:22px;font-weight:600;color:var(--bg);letter-spacing:-.015em}
+.fc-card .v .g{color:var(--green-l)}
+.fc-card .v.small{font-size:18px}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--black);color:rgba(255,255,255,.6);padding:64px 0 24px;border-top:1px solid rgba(255,255,255,.1)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
+@media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+.foot-col h4{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bg);text-transform:uppercase;letter-spacing:.18em;margin-bottom:18px}
+.foot-col p,.foot-col li{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.55)}
+.foot-col ul{list-style:none}
+.foot-col ul li{margin-bottom:4px}
+.foot-col ul a:hover{color:var(--green-l)}
+.foot-brand{display:inline-flex;align-items:center;gap:10px;color:var(--bg);font-family:'Bricolage Grotesque',serif;font-weight:700;font-size:28px;margin-bottom:18px;letter-spacing:-.04em}
+.foot-brand .brand-dot{width:14px;height:14px}
+.foot-brand .x{color:var(--green)}
+.foot-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green);margin-top:8px;letter-spacing:.15em;text-transform:uppercase}
+.foot-req{margin-top:18px;font-size:12px;color:rgba(255,255,255,.4);line-height:1.7}
+.foot-social{display:flex;gap:8px;margin-top:20px}
+.foot-social a{
+  width:40px;height:40px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.7);display:grid;place-items:center;transition:all .25s ease;
+}
+.foot-social a:hover{background:var(--green);color:var(--ink);border-color:var(--green)}
+.foot-social svg{width:16px;height:16px}
+
+.foot-bot{padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:11.5px;color:rgba(255,255,255,.4);font-family:'JetBrains Mono',monospace;letter-spacing:.06em}
+.foot-bot a{color:rgba(255,255,255,.55)}
+.foot-bot a:hover{color:var(--green-l)}
+
+/* ---------- MOBILE BOTTOM BAR ---------- */
+.mbb{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;
+  background:var(--bg);border-top:1px solid var(--line);
+  padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));
+}
+.mbb-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.mbb-btn{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 4px;border-radius:6px;color:var(--ink-2);font-size:10px;font-weight:600;letter-spacing:-.005em}
+.mbb-btn svg{width:20px;height:20px}
+.mbb-btn:active{background:var(--bg-2)}
+.mbb-btn.call{color:var(--ink);position:relative}
+.mbb-btn.wa{color:#25D366}
+.mbb-btn.call::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:34px;height:34px;border-radius:50%;background:var(--green);opacity:.18;pointer-events:none}
+@media (max-width:767px){.mbb{display:block}body{padding-bottom:68px}}
+
+/* ---------- BACK TO TOP ---------- */
+.btt{
+  position:fixed;right:22px;bottom:30px;z-index:850;
+  width:46px;height:46px;border-radius:50%;background:var(--ink);color:var(--bg);
+  display:grid;place-items:center;
+  opacity:0;visibility:hidden;cursor:pointer;
+  transition:all .3s ease;border:1px solid var(--ink);
+}
+.btt.show{opacity:1;visibility:visible}
+.btt:hover{background:var(--green);color:var(--ink);border-color:var(--green)}
+.btt svg{width:18px;height:18px}
+@media (max-width:767px){.btt{bottom:80px;right:14px;width:42px;height:42px}}
+
+/* ---------- BURGER MENU ---------- */
+.bmenu{position:fixed;inset:0;z-index:1100;display:none}
+.bmenu.open{display:block}
+.bmenu-ov{position:absolute;inset:0;background:rgba(11,11,10,.5);backdrop-filter:blur(4px)}
+.bmenu-panel{position:absolute;top:0;right:0;bottom:0;width:min(420px,92vw);background:var(--bg);overflow-y:auto}
+.bmenu-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:2}
+.bmenu-close{width:42px;height:42px;border-radius:50%;background:var(--bg);border:1px solid var(--line);color:var(--ink);display:grid;place-items:center}
+.bmenu-body{padding:24px 28px 40px}
+.bmenu-grp{margin-bottom:28px}
+.bmenu-grp h5{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--mute);letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px}
+.bmenu-grp a{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-family:'Bricolage Grotesque',serif;font-size:17px;color:var(--ink);font-weight:500}
+.bmenu-grp a:hover{color:var(--green-d)}
+.bmenu-grp a::after{content:"→";color:var(--mute);font-size:14px;transition:color .25s ease}
+.bmenu-grp a:hover::after{color:var(--green-d)}
+
+/* ---------- MODAL ---------- */
+.modal{position:fixed;inset:0;z-index:1200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-ov{position:absolute;inset:0;background:rgba(11,11,10,.7);backdrop-filter:blur(4px)}
+.modal-box{position:relative;background:var(--bg);border-radius:18px;max-width:560px;width:100%;max-height:92vh;overflow-y:auto;border:1px solid var(--line)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:2}
+.modal-head h3{font-family:'Bricolage Grotesque',serif;font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.modal-head h3 em{color:var(--green-d);font-style:italic;font-weight:500}
+.modal-close{width:40px;height:40px;border-radius:50%;background:var(--bg-2);color:var(--ink);display:grid;place-items:center}
+.modal-close:hover{background:var(--ink);color:var(--bg)}
+.modal-body{padding:24px 28px 28px}
+.frow{display:grid;gap:14px;margin-bottom:14px}
+.frow.two{grid-template-columns:1fr 1fr}
+@media (max-width:480px){.frow.two{grid-template-columns:1fr}}
+.ffield label{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-3);margin-bottom:6px;letter-spacing:.15em;text-transform:uppercase;font-weight:500}
+.ffield input,.ffield select,.ffield textarea{width:100%;padding:14px 16px;border:1px solid var(--line-2);border-radius:10px;background:var(--bg);color:var(--ink);font-size:14.5px;transition:border-color .2s ease}
+.ffield input:focus,.ffield select:focus,.ffield textarea:focus{outline:none;border-color:var(--ink)}
+.ffield textarea{min-height:88px;resize:vertical;font-family:inherit}
+.fcheck{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-2);margin:8px 0 16px;cursor:pointer}
+.fcheck input{width:18px;height:18px;accent-color:var(--green-d);cursor:pointer}
+.fsubmit{
+  width:100%;padding:16px;background:var(--ink);color:var(--bg);border-radius:999px;
+  font-family:'Bricolage Grotesque',serif;font-weight:600;font-size:15.5px;letter-spacing:-.01em;
+  transition:background .25s ease, color .25s ease;
+}
+.fsubmit:hover{background:var(--green);color:var(--ink)}
+.fnote{text-align:center;font-size:11.5px;color:var(--mute);margin-top:14px;line-height:1.5;font-family:'JetBrains Mono',monospace;letter-spacing:.05em}
+
+.toast{
+  position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(140px);
+  background:var(--ink);color:var(--bg);padding:16px 24px;border-radius:999px;
+  font-weight:600;font-size:14px;z-index:1300;opacity:0;pointer-events:none;
+  transition:transform .35s var(--tx-ease), opacity .35s ease;max-width:90vw;text-align:center;
+  display:flex;align-items:center;gap:10px;
+}
+.toast::before{content:"";width:8px;height:8px;background:var(--green);border-radius:50%}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto}
+@media (max-width:767px){.toast{bottom:140px;font-size:13px;padding:14px 18px}}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease, transform .8s var(--tx-ease)}
+.reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" id="scrollBar"></div>
+
+<!-- ============== HEADER ============== -->
+<header id="header">
+  <div class="wrap hrow">
+    <a href="#" class="brand" aria-label="Sanitex">
+      <span class="brand-dot"></span>
+      <span class="brand-name">sanite<span class="x">x</span></span>
+      <span class="brand-tag">ALA · 24/7</span>
+    </a>
+
+    <nav class="nav" aria-label="Главная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#methods">Методы</a>
+      <a href="#why">О нас</a>
+      <a href="#process">Процесс</a>
+      <a href="#b2b">Бизнесу</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="h-right">
+      <a href="tel:+77079062810" class="phone-mini" aria-label="Позвонить">
+        <span class="pulse"></span>
+        <span>+7 707 906 28 10</span>
+      </a>
+      <button class="burger" id="burgerBtn" aria-label="Меню">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-lbl">
+        <span>SANITEX</span>
+        <span class="sep">/</span>
+        <span>Алматы и&nbsp;область</span>
+        <span class="sep">/</span>
+        <span>Лицензия СЭС РК</span>
+      </div>
+      <h1 class="hero-h">
+        Точное удаление<br>
+        <span class="underline"><span class="acc">вредителей.</span></span><br>
+        Без следа.
+      </h1>
+      <p class="hero-sub">
+        <strong>Sanitex</strong> — санитарная обработка квартир, домов и&nbsp;коммерческих объектов. Сертифицированные препараты, договор с&nbsp;гарантией до&nbsp;12&nbsp;месяцев, выезд в&nbsp;день обращения по&nbsp;Алматы и&nbsp;Алматинской области.
+      </p>
+      <div class="hero-cta">
+        <button class="btn btn-green" onclick="openModal('order')">
+          Вызвать мастера
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <a href="https://wa.me/77079062810?text=Здравствуйте,%20нужна%20консультация%20Sanitex" target="_blank" rel="noopener" class="btn btn-ghost-d">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.5 14.38c-.28-.14-1.66-.82-1.92-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.56.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.47l-.54-.01c-.18 0-.48.07-.74.35-.26.28-.97.95-.97 2.31 0 1.36 1 2.67 1.14 2.85.14.19 1.96 3 4.75 4.21.66.29 1.18.46 1.58.59.67.21 1.27.18 1.75.11.53-.08 1.66-.68 1.89-1.33.23-.65.23-1.2.16-1.33-.06-.12-.25-.2-.53-.34zM12 2.04C6.5 2.04 2.04 6.5 2.04 12c0 1.76.46 3.45 1.33 4.95L2 22l5.22-1.36c1.45.79 3.08 1.21 4.78 1.21 5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.03-5.17-2.92-7.05C17.17 3.07 14.66 2.04 12 2.04"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-label="Параметры услуги">
+      <div class="hc-row">
+        <span class="hc-k">Подача</span>
+        <span class="hc-v">от <span class="g">60 мин</span></span>
+      </div>
+      <div class="hc-row">
+        <span class="hc-k">Гарантия</span>
+        <span class="hc-v">до 12 мес</span>
+      </div>
+      <div class="hc-row">
+        <span class="hc-k">Препараты</span>
+        <span class="hc-v">4&nbsp;класс опасности</span>
+      </div>
+      <div class="hc-row">
+        <span class="hc-k">Документы</span>
+        <span class="hc-v">Договор · АВР · ЭСФ</span>
+      </div>
+      <div class="hc-foot">
+        Возврат в&nbsp;помещение — через 2–3&nbsp;часа после проветривания. Безопасно для&nbsp;детей и&nbsp;животных.
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap" style="padding:0">
+    <div class="hero-strip">
+      <div><span class="k">Объектов</span><span class="v"><span class="g">7100+</span></span></div>
+      <div><span class="k">Опыт команды</span><span class="v">8 лет</span></div>
+      <div><span class="k">Оценка 2ГИС</span><span class="v">4.9 / 5</span></div>
+      <div><span class="k">Режим</span><span class="v">24 / 7 / 365</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MARQUEE ============== -->
+<div class="marq" aria-hidden="true">
+  <div class="marq-track">
+    <span>Клопы</span><span>Тараканы</span><span>Крысы</span><span>Мыши</span><span>Блохи</span><span>Комары</span><span>Муравьи</span><span>Клещи</span><span>Плесень</span><span>Грибок</span><span>Осы</span><span>Моль</span>
+    <span>Клопы</span><span>Тараканы</span><span>Крысы</span><span>Мыши</span><span>Блохи</span><span>Комары</span><span>Муравьи</span><span>Клещи</span><span>Плесень</span><span>Грибок</span><span>Осы</span><span>Моль</span>
+  </div>
+</div>
+
+<!-- ============== SERVICES ============== -->
+<section id="services" class="svc-section">
+  <div class="wrap">
+    <div class="svc-head">
+      <div>
+        <div class="s-meta"><span class="num">01</span> Каталог услуг</div>
+        <h2 class="s-title">Решаем <span class="acc">любые задачи</span> по&nbsp;санитарной обработке.</h2>
+        <p class="s-lead">Восемнадцать направлений работы — от&nbsp;бытовых насекомых до&nbsp;грызунов, грибка и&nbsp;опасных рептилий. Каждая обработка&nbsp;— с&nbsp;договором и&nbsp;контрольным выездом.</p>
+      </div>
+      <div class="svc-count">
+        18
+        <span class="small">направлений</span>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc" onclick="openModal('order','Постельные клопы')">
+        <span class="svc-num">A.01</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">⌖</div>
+        <div>
+          <div class="svc-name">Постельные клопы</div>
+          <div class="svc-tag">матрасы · мебель · ковры</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Тараканы')">
+        <span class="svc-num">A.02</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">⌬</div>
+        <div>
+          <div class="svc-name">Тараканы</div>
+          <div class="svc-tag">кухня · ванная · щели</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Крысы и мыши')">
+        <span class="svc-num">A.03</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">⊞</div>
+        <div>
+          <div class="svc-name">Крысы и&nbsp;мыши</div>
+          <div class="svc-tag">подвалы · склады · дачи</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Муравьи')">
+        <span class="svc-num">A.04</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">⌘</div>
+        <div>
+          <div class="svc-name">Муравьи</div>
+          <div class="svc-tag">домашние · садовые</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Блохи')">
+        <span class="svc-num">A.05</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">◬</div>
+        <div>
+          <div class="svc-name">Блохи</div>
+          <div class="svc-tag">ковры · полы · подвалы</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Комары и мошка')">
+        <span class="svc-num">A.06</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">≋</div>
+        <div>
+          <div class="svc-name">Комары · мошка</div>
+          <div class="svc-tag">участок · веранда</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Клещи')">
+        <span class="svc-num">A.07</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">⊙</div>
+        <div>
+          <div class="svc-name">Клещи</div>
+          <div class="svc-tag">газоны · участки</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Пауки и каракурты')">
+        <span class="svc-num">A.08</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">✶</div>
+        <div>
+          <div class="svc-name">Пауки · каракурты</div>
+          <div class="svc-tag">дворы · подвалы</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Осы и шершни')">
+        <span class="svc-num">A.09</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">◆</div>
+        <div>
+          <div class="svc-name">Осы · шершни</div>
+          <div class="svc-tag">снятие гнёзд</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Моль')">
+        <span class="svc-num">A.10</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">▲</div>
+        <div>
+          <div class="svc-name">Моль</div>
+          <div class="svc-tag">платяная · пищевая</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Мокрицы')">
+        <span class="svc-num">A.11</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">◢</div>
+        <div>
+          <div class="svc-name">Мокрицы</div>
+          <div class="svc-tag">ванная · цокольные</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Чешуйницы')">
+        <span class="svc-num">A.12</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">⌒</div>
+        <div>
+          <div class="svc-name">Чешуйницы</div>
+          <div class="svc-tag">бумага · обои</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Кожееды')">
+        <span class="svc-num">A.13</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">◯</div>
+        <div>
+          <div class="svc-name">Кожееды</div>
+          <div class="svc-tag">шкафы · обивка</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Плесень и грибок')">
+        <span class="svc-num">B.01</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">⌥</div>
+        <div>
+          <div class="svc-name">Плесень · грибок</div>
+          <div class="svc-tag">стены · потолки · швы</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Неприятный запах')">
+        <span class="svc-num">B.02</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">⌇</div>
+        <div>
+          <div class="svc-name">Запах · озонирование</div>
+          <div class="svc-tag">после ремонта · табак</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Дезинфекция помещений')">
+        <span class="svc-num">B.03</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">⊕</div>
+        <div>
+          <div class="svc-name">Дезинфекция</div>
+          <div class="svc-tag">офисы · школы · клиники</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Кроты')">
+        <span class="svc-num">C.01</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">◣</div>
+        <div>
+          <div class="svc-name">Кроты</div>
+          <div class="svc-tag">газоны · огороды</div>
+        </div>
+      </div>
+
+      <div class="svc" onclick="openModal('order','Змеи')">
+        <span class="svc-num">C.02</span>
+        <span class="svc-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <div class="svc-glyph">∽</div>
+        <div>
+          <div class="svc-name">Змеи</div>
+          <div class="svc-tag">отлов · отпугивание</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== METHODS ============== -->
+<section id="methods" class="methods">
+  <div class="wrap">
+    <div class="s-meta"><span class="num">02</span> Методы обработки</div>
+    <h2 class="s-title">Четыре технологии, <span class="acc">подбираем</span> под&nbsp;задачу.</h2>
+    <p class="s-lead">Метод обработки определяет инженер на&nbsp;этапе осмотра&nbsp;— исходя из&nbsp;вида вредителя, степени заражения, типа объекта и&nbsp;наличия чувствительных поверхностей.</p>
+
+    <div class="met-grid">
+      <div class="met">
+        <div class="met-head">
+          <span class="met-no">M-01</span>
+          <h3 class="met-name">Горячий <em>туман</em></h3>
+        </div>
+        <p class="met-desc">Аэрозольный генератор разогревает рабочий состав до&nbsp;55–60°C. Частицы 5–30&nbsp;мкм проникают за&nbsp;плинтуса, в&nbsp;щели мебели и&nbsp;карнизы&nbsp;— туда, куда не&nbsp;достанет распыление.</p>
+        <div class="met-specs">
+          <div><span class="k">Эффективен</span><span class="v">Клопы, тараканы, блохи</span></div>
+          <div><span class="k">Время</span><span class="v">45–90&nbsp;мин</span></div>
+          <div><span class="k">Проветривание</span><span class="v">3–6&nbsp;ч</span></div>
+          <div><span class="k">Запах</span><span class="v">Слабый, выветривается</span></div>
+        </div>
+      </div>
+
+      <div class="met">
+        <div class="met-head">
+          <span class="met-no">M-02</span>
+          <h3 class="met-name">Холодный <em>туман</em></h3>
+        </div>
+        <p class="met-desc">Без&nbsp;нагрева: распыление под&nbsp;давлением 4–6&nbsp;бар. Капля крупнее, оседает равномерно, не&nbsp;повреждает технику и&nbsp;деликатные поверхности. Базовый метод для&nbsp;жилых помещений.</p>
+        <div class="met-specs">
+          <div><span class="k">Эффективен</span><span class="v">Универсально</span></div>
+          <div><span class="k">Время</span><span class="v">30–60&nbsp;мин</span></div>
+          <div><span class="k">Проветривание</span><span class="v">2–3&nbsp;ч</span></div>
+          <div><span class="k">Запах</span><span class="v">Минимальный</span></div>
+        </div>
+      </div>
+
+      <div class="met">
+        <div class="met-head">
+          <span class="met-no">M-03</span>
+          <h3 class="met-name">Гелевые <em>приманки</em></h3>
+        </div>
+        <p class="met-desc">Точечное нанесение инсектицидного геля&nbsp;— невидимая «дорожка» к&nbsp;местам обитания. Без&nbsp;распыления и&nbsp;запаха. Применяется в&nbsp;общепите, офисах с&nbsp;техникой, медучреждениях.</p>
+        <div class="met-specs">
+          <div><span class="k">Эффективен</span><span class="v">Тараканы, муравьи</span></div>
+          <div><span class="k">Время</span><span class="v">15–30&nbsp;мин</span></div>
+          <div><span class="k">Проветривание</span><span class="v">Не&nbsp;требуется</span></div>
+          <div><span class="k">Запах</span><span class="v">Отсутствует</span></div>
+        </div>
+      </div>
+
+      <div class="met">
+        <div class="met-head">
+          <span class="met-no">M-04</span>
+          <h3 class="met-name">Барьерная <em>обработка</em></h3>
+        </div>
+        <p class="met-desc">Защитный контур по&nbsp;периметру объекта и&nbsp;путям миграции вредителей. Продлевает эффект основной обработки до&nbsp;6&nbsp;месяцев, блокирует повторное проникновение с&nbsp;улицы.</p>
+        <div class="met-specs">
+          <div><span class="k">Эффективен</span><span class="v">Профилактика</span></div>
+          <div><span class="k">Время</span><span class="v">30–45&nbsp;мин</span></div>
+          <div><span class="k">Эффект</span><span class="v">До&nbsp;6&nbsp;мес</span></div>
+          <div><span class="k">Безопасность</span><span class="v">Полная</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== WHY ============== -->
+<section id="why" class="why">
+  <div class="wrap">
+    <div class="s-meta"><span class="num">03</span> Почему&nbsp;нас выбирают</div>
+    <h2 class="s-title">Шесть причин <span class="acc">доверять</span> Sanitex.</h2>
+    <p class="s-lead">Каждая обработка&nbsp;— это инженерное решение, а&nbsp;не&nbsp;просто «пшикнуть препаратом». Вот что отличает нас от&nbsp;частников и&nbsp;конкурентов.</p>
+
+    <div class="why-grid">
+      <div class="why-i">
+        <div class="why-no">01<span class="dot"></span></div>
+        <h3 class="why-h">Инженерный подход</h3>
+        <p class="why-p">Каждый объект осматривается перед обработкой. Подбираем метод и&nbsp;дозировку под&nbsp;площадь, степень заражения и&nbsp;тип помещения&nbsp;— а&nbsp;не&nbsp;«одинаково для&nbsp;всех».</p>
+      </div>
+      <div class="why-i">
+        <div class="why-no">02<span class="dot"></span></div>
+        <h3 class="why-h">Сертифицированные средства</h3>
+        <p class="why-p">Только препараты с&nbsp;регистрационным удостоверением Минздрава РК. 4&nbsp;класс опасности&nbsp;— малоопасные. Без&nbsp;«дихлофоса» и&nbsp;кустарных аналогов.</p>
+      </div>
+      <div class="why-i">
+        <div class="why-no">03<span class="dot"></span></div>
+        <h3 class="why-h">Договор + гарантия</h3>
+        <p class="why-p">Договор с&nbsp;печатью перед выездом. Гарантия от&nbsp;6&nbsp;до&nbsp;12&nbsp;месяцев в&nbsp;зависимости от&nbsp;услуги. Если вредители появились снова в&nbsp;срок&nbsp;— возвращаемся бесплатно.</p>
+      </div>
+      <div class="why-i">
+        <div class="why-no">04<span class="dot"></span></div>
+        <h3 class="why-h">Подача за&nbsp;час</h3>
+        <p class="why-p">Диспетчер&nbsp;— круглосуточно. Бригада выезжает в&nbsp;течение 1–2&nbsp;часов в&nbsp;любую точку Алматы и&nbsp;за&nbsp;3–4&nbsp;часа&nbsp;— по&nbsp;области.</p>
+      </div>
+      <div class="why-i">
+        <div class="why-no">05<span class="dot"></span></div>
+        <h3 class="why-h">Конфиденциальность</h3>
+        <p class="why-p">Гражданский транспорт без&nbsp;надписей, форма без&nbsp;логотипов, чек&nbsp;— по&nbsp;запросу. Соседи и&nbsp;арендодатели не&nbsp;узнают о&nbsp;визите.</p>
+      </div>
+      <div class="why-i">
+        <div class="why-no">06<span class="dot"></span></div>
+        <h3 class="why-h">Контрольный выезд</h3>
+        <p class="why-p">Через 10–14&nbsp;дней инженер проверяет результат. Если осталась активность&nbsp;— делаем повторную обработку в&nbsp;рамках гарантии.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROCESS ============== -->
+<section id="process" class="proc">
+  <div class="wrap">
+    <div class="s-meta"><span class="num">04</span> Как мы работаем</div>
+    <h2 class="s-title">От&nbsp;заявки до&nbsp;<span class="acc">результата</span>&nbsp;— пять шагов.</h2>
+    <p class="s-lead">Прозрачный регламент. Все этапы фиксируются в&nbsp;договоре и&nbsp;акте обработки.</p>
+
+    <div class="proc-grid">
+      <div class="step">
+        <div class="step-no">01<span class="bar"></span></div>
+        <h3 class="step-h">Заявка</h3>
+        <p class="step-p">Звонок, WhatsApp или&nbsp;форма на&nbsp;сайте. Диспетчер уточняет тип объекта, площадь и&nbsp;проблему.</p>
+        <div class="step-time">~ 3 мин</div>
+      </div>
+      <div class="step">
+        <div class="step-no">02<span class="bar"></span></div>
+        <h3 class="step-h">Расчёт</h3>
+        <p class="step-p">Называем итоговую стоимость и&nbsp;удобное время. Без&nbsp;«сюрпризов» по&nbsp;факту приезда.</p>
+        <div class="step-time">~ 5 мин</div>
+      </div>
+      <div class="step">
+        <div class="step-no">03<span class="bar"></span></div>
+        <h3 class="step-h">Выезд</h3>
+        <p class="step-p">Бригада приезжает с&nbsp;оборудованием. Подписываем договор, инженер осматривает помещение.</p>
+        <div class="step-time">60–120 мин</div>
+      </div>
+      <div class="step">
+        <div class="step-no">04<span class="bar"></span></div>
+        <h3 class="step-h">Обработка</h3>
+        <p class="step-p">Профессиональная обработка выбранным методом. Акт выполненных работ и&nbsp;гарантийный талон.</p>
+        <div class="step-time">30–90 мин</div>
+      </div>
+      <div class="step">
+        <div class="step-no">05<span class="bar"></span></div>
+        <h3 class="step-h">Контроль</h3>
+        <p class="step-p">Через 14&nbsp;дней проверяем результат. При&nbsp;необходимости&nbsp;— бесплатная повторная обработка.</p>
+        <div class="step-time">14 дней</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== B2B ============== -->
+<section id="b2b" class="b2b">
+  <div class="wrap">
+    <div class="s-meta"><span class="num">05</span> Корпоративным клиентам</div>
+    <h2 class="s-title">Регулярное обслуживание <span class="acc">объектов бизнеса.</span></h2>
+
+    <div class="b2b-grid">
+      <ul class="b2b-list">
+        <li>
+          <span class="ix">B2B.01</span>
+          <span class="tx"><b>Договор на&nbsp;регулярное ТО</b> с&nbsp;индивидуальным графиком обработок и&nbsp;фиксированным тарифом на&nbsp;12&nbsp;месяцев.</span>
+        </li>
+        <li>
+          <span class="ix">B2B.02</span>
+          <span class="tx"><b>Соответствие СанПиН</b> для&nbsp;общепита, медучреждений, детских садов и&nbsp;школ. Помогаем пройти проверки СЭС.</span>
+        </li>
+        <li>
+          <span class="ix">B2B.03</span>
+          <span class="tx"><b>Безналичный расчёт</b>, НДС, отсрочка платежа по&nbsp;договору. Закрывающие документы&nbsp;— в&nbsp;течение суток.</span>
+        </li>
+        <li>
+          <span class="ix">B2B.04</span>
+          <span class="tx"><b>Экстренный выезд</b> в&nbsp;течение 60&nbsp;минут для&nbsp;контрактных клиентов&nbsp;— приоритет в&nbsp;диспетчерской.</span>
+        </li>
+        <li>
+          <span class="ix">B2B.05</span>
+          <span class="tx"><b>Журнал обработок</b> для&nbsp;контролирующих органов: акты, протоколы, схемы расстановки приманок.</span>
+        </li>
+        <li>
+          <span class="ix">B2B.06</span>
+          <span class="tx"><b>Ночные обработки</b> и&nbsp;работа без&nbsp;остановки производства&nbsp;— подбираем удобное время.</span>
+        </li>
+      </ul>
+
+      <div class="b2b-cta">
+        <h3>Нужно <em>коммерческое предложение?</em></h3>
+        <p>Оставьте заявку — подготовим КП с&nbsp;графиком ТО, тарифной сеткой и&nbsp;примерами договоров под&nbsp;ваш тип объекта в&nbsp;течение 24&nbsp;часов.</p>
+        <button class="btn btn-green" onclick="openModal('legal')">
+          Запросить КП
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <div class="b2b-docs">
+          <span>Договор</span>
+          <span>Счёт</span>
+          <span>АВР</span>
+          <span>ЭСФ</span>
+          <span>Акт обработки</span>
+          <span>Журнал учёта</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== GEO ============== -->
+<section class="geo">
+  <div class="wrap">
+    <div class="geo-wrap">
+      <div>
+        <div class="s-meta"><span class="num">06</span> География</div>
+        <h2 class="s-title">Алматы и&nbsp;<span class="acc">область</span>.</h2>
+        <p class="s-lead">Работаем во&nbsp;всех восьми районах города, а&nbsp;также в&nbsp;ближайших населённых пунктах Алматинской области. Время подачи&nbsp;— от&nbsp;1&nbsp;часа.</p>
+      </div>
+
+      <div>
+        <div class="geo-zones">
+          <span class="zone">Алмалинский</span>
+          <span class="zone">Ауэзовский</span>
+          <span class="zone">Бостандыкский</span>
+          <span class="zone">Жетысуский</span>
+          <span class="zone">Медеуский</span>
+          <span class="zone">Наурызбайский</span>
+          <span class="zone">Турксибский</span>
+          <span class="zone">Алатауский</span>
+          <span class="zone">Талгар</span>
+          <span class="zone">Каскелен</span>
+          <span class="zone">Иссык</span>
+          <span class="zone">Капшагай</span>
+          <span class="zone">Узынагаш</span>
+          <span class="zone">Боралдай</span>
+        </div>
+        <div class="geo-note">
+          <strong>Нужна обработка в&nbsp;другом районе области?</strong> Позвоните&nbsp;— уточним возможность выезда. Для&nbsp;коммерческих объектов выезжаем по&nbsp;всему Жетысускому региону.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="s-meta"><span class="num">07</span> Частые вопросы</div>
+    <h2 class="s-title">Прежде чем <span class="acc">позвонить.</span></h2>
+    <p class="s-lead">Восемь самых частых вопросов клиентов. Если ответа нет&nbsp;— напишите в&nbsp;WhatsApp, отвечаем в&nbsp;течение 10&nbsp;минут.</p>
+
+    <div class="faq-wrap">
+      <div class="faq-i">
+        <button class="faq-q">
+          <span class="qn">Q.01</span>
+          <span>Насколько препараты безопасны для&nbsp;детей и&nbsp;животных?</span>
+          <span class="qpl"></span>
+        </button>
+        <div class="faq-a">
+          <p>Мы&nbsp;используем препараты 4&nbsp;класса опасности (малоопасные) с&nbsp;разрешением Минздрава РК. После обработки нужно проветрить помещение 2–3&nbsp;часа, провести влажную уборку открытых горизонтальных поверхностей, и&nbsp;можно возвращаться. Для&nbsp;аквариумов&nbsp;— временно отключить аэратор и&nbsp;накрыть плёнкой.</p>
+        </div>
+      </div>
+      <div class="faq-i">
+        <button class="faq-q">
+          <span class="qn">Q.02</span>
+          <span>От&nbsp;чего зависит цена обработки?</span>
+          <span class="qpl"></span>
+        </button>
+        <div class="faq-a">
+          <p>Три фактора: площадь объекта, вид вредителя и&nbsp;выбранный метод (холодный туман, горячий, гель, барьер). Цена для&nbsp;1-комнатной квартиры будет ниже, чем для&nbsp;дома 200&nbsp;м². Точную стоимость диспетчер озвучивает после короткого разговора&nbsp;— без&nbsp;скрытых надбавок по&nbsp;факту приезда.</p>
+        </div>
+      </div>
+      <div class="faq-i">
+        <button class="faq-q">
+          <span class="qn">Q.03</span>
+          <span>Что если вредители появятся снова?</span>
+          <span class="qpl"></span>
+        </button>
+        <div class="faq-a">
+          <p>Гарантия закреплена в&nbsp;договоре: от&nbsp;6&nbsp;месяцев на&nbsp;стандартные обработки и&nbsp;до&nbsp;12&nbsp;месяцев&nbsp;— на&nbsp;комплексные. Если в&nbsp;этот срок появилась активность&nbsp;— приезжаем повторно без&nbsp;доплаты. Условие&nbsp;— соблюдение наших рекомендаций после первой обработки (мы&nbsp;их&nbsp;выдаём в&nbsp;печатном виде).</p>
+        </div>
+      </div>
+      <div class="faq-i">
+        <button class="faq-q">
+          <span class="qn">Q.04</span>
+          <span>Как готовиться к&nbsp;приезду бригады?</span>
+          <span class="qpl"></span>
+        </button>
+        <div class="faq-a">
+          <p>Минимум&nbsp;— убрать продукты в&nbsp;холодильник, отодвинуть мебель от&nbsp;стен на&nbsp;20–30&nbsp;см (особенно для&nbsp;клопов), накрыть аквариум, увести животных. Подробную памятку диспетчер отправляет в&nbsp;WhatsApp сразу после оформления заявки. Сама обработка&nbsp;— 30–90&nbsp;минут, всё это время в&nbsp;помещении находиться нельзя.</p>
+        </div>
+      </div>
+      <div class="faq-i">
+        <button class="faq-q">
+          <span class="qn">Q.05</span>
+          <span>Останется ли&nbsp;запах после работы?</span>
+          <span class="qpl"></span>
+        </button>
+        <div class="faq-a">
+          <p>Зависит от&nbsp;метода. Холодный туман&nbsp;— практически без&nbsp;запаха, едва уловимый аромат уходит за&nbsp;2&nbsp;часа. Горячий туман&nbsp;— слабый запах, выветривается за&nbsp;4–6&nbsp;часов. Гелевая обработка&nbsp;— запаха нет&nbsp;вообще. Если нужна максимально «беззапаховая» работа&nbsp;— скажите диспетчеру, подберём метод.</p>
+        </div>
+      </div>
+      <div class="faq-i">
+        <button class="faq-q">
+          <span class="qn">Q.06</span>
+          <span>Работаете ли&nbsp;с&nbsp;юрлицами?</span>
+          <span class="qpl"></span>
+        </button>
+        <div class="faq-a">
+          <p>Да, с&nbsp;ТОО, ИП на&nbsp;ОУР и&nbsp;госорганизациями. Полный пакет закрывающих документов: договор, счёт, АВР, ЭСФ, акт обработки. Для&nbsp;общепита и&nbsp;медучреждений&nbsp;— дополнительно журнал учёта обработок и&nbsp;схема расстановки приманок для&nbsp;контролирующих органов. Подробнее&nbsp;— в&nbsp;разделе <a href="#b2b">«Бизнесу»</a>.</p>
+        </div>
+      </div>
+      <div class="faq-i">
+        <button class="faq-q">
+          <span class="qn">Q.07</span>
+          <span>Узнают&nbsp;ли соседи о&nbsp;визите?</span>
+          <span class="qpl"></span>
+        </button>
+        <div class="faq-a">
+          <p>Нет. Машина без&nbsp;опознавательных знаков, инженер в&nbsp;гражданской одежде, оборудование переносится в&nbsp;обычных кейсах. Договор и&nbsp;документы&nbsp;— только в&nbsp;ваших руках. Полная конфиденциальность входит в&nbsp;стандарт обслуживания.</p>
+        </div>
+      </div>
+      <div class="faq-i">
+        <button class="faq-q">
+          <span class="qn">Q.08</span>
+          <span>Можно&nbsp;ли заказать обработку ночью?</span>
+          <span class="qpl"></span>
+        </button>
+        <div class="faq-a">
+          <p>Да, диспетчерская работает круглосуточно. Для&nbsp;частных клиентов&nbsp;— ночные выезды по&nbsp;тарифу +20%. Для&nbsp;корпоративных&nbsp;— бесплатно, ночные обработки часто включены в&nbsp;график регулярного обслуживания ресторанов и&nbsp;магазинов.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL CTA ============== -->
+<section id="contacts" class="fc">
+  <div class="wrap">
+    <div class="fc-inner">
+      <h2>Готовы решить вашу <em>проблему?</em></h2>
+      <p>Оставьте заявку или&nbsp;позвоните&nbsp;— бригада выезжает в&nbsp;день обращения. Работаем по&nbsp;Алматы и&nbsp;области круглосуточно.</p>
+      <div class="fc-row">
+        <a href="tel:+77079062810" class="btn btn-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="16" height="16" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          +7 707 906 28 10
+        </a>
+        <button class="btn btn-ghost-d" onclick="openModal('order')">Онлайн-заявка</button>
+      </div>
+    </div>
+
+    <div class="fc-cards">
+      <a href="tel:+77079062810" class="fc-card">
+        <span class="k">Телефон / Звонок</span>
+        <span class="v"><span class="g">+7 707 906 28 10</span></span>
+      </a>
+      <a href="https://wa.me/77079062810" target="_blank" rel="noopener" class="fc-card">
+        <span class="k">WhatsApp · Telegram</span>
+        <span class="v small">Написать в&nbsp;мессенджер →</span>
+      </a>
+      <div class="fc-card">
+        <span class="k">Режим работы</span>
+        <span class="v small">Круглосуточно, без&nbsp;выходных</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand">
+          <span class="brand-dot"></span>
+          <span>sanite<span class="x">x</span></span>
+        </div>
+        <div class="foot-tag">Санитарная обработка / Алматы</div>
+        <p style="margin-top:14px;color:rgba(255,255,255,.55);font-size:13.5px">Профессиональная дезинфекция, дезинсекция и&nbsp;дератизация. Сертифицированные средства, договор, гарантия до&nbsp;12&nbsp;месяцев.</p>
+        <div class="foot-req">
+          г. Алматы, Алматинская область<br>
+          Режим: круглосуточно, 24/7<br>
+          Лицензия СЭС РК
+        </div>
+        <div class="foot-social">
+          <a href="https://wa.me/77079062810" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.38c-.28-.14-1.66-.82-1.92-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.56.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.47l-.54-.01c-.18 0-.48.07-.74.35-.26.28-.97.95-.97 2.31 0 1.36 1 2.67 1.14 2.85.14.19 1.96 3 4.75 4.21.66.29 1.18.46 1.58.59.67.21 1.27.18 1.75.11.53-.08 1.66-.68 1.89-1.33.23-.65.23-1.2.16-1.33-.06-.12-.25-.2-.53-.34zM12 2.04C6.5 2.04 2.04 6.5 2.04 12c0 1.76.46 3.45 1.33 4.95L2 22l5.22-1.36c1.45.79 3.08 1.21 4.78 1.21 5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.03-5.17-2.92-7.05C17.17 3.07 14.66 2.04 12 2.04"/></svg>
+          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
+          </a>
+          <a href="tel:+77079062810" aria-label="Телефон">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#services">Клопы</a></li>
+          <li><a href="#services">Тараканы</a></li>
+          <li><a href="#services">Грызуны</a></li>
+          <li><a href="#services">Блохи · клещи</a></li>
+          <li><a href="#services">Комары · мошка</a></li>
+          <li><a href="#services">Плесень · грибок</a></li>
+          <li><a href="#services">Дезинфекция</a></li>
+          <li><a href="#methods">Все методы</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>География</h4>
+        <ul>
+          <li>Алматы (все районы)</li>
+          <li>Талгар</li>
+          <li>Каскелен</li>
+          <li>Иссык</li>
+          <li>Капшагай</li>
+          <li>Узынагаш</li>
+          <li>Боралдай</li>
+          <li>Алматинская область</li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Связаться</h4>
+        <ul>
+          <li><a href="tel:+77079062810">+7 707 906 28 10</a></li>
+          <li><a href="https://wa.me/77079062810" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li>Круглосуточно</li>
+          <li>Без выходных</li>
+        </ul>
+        <div style="margin-top:18px">
+          <button class="btn btn-green" style="padding:12px 18px;font-size:13px" onclick="openModal('order')">Заказать обработку</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bot">
+      <div>© <span id="year"></span> SANITEX · Все права защищены</div>
+      <div><a href="#">Политика конфиденциальности</a> · <a href="#">Публичная оферта</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============== BACK TO TOP ============== -->
+<button class="btt" id="bttBtn" aria-label="Наверх">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ============== MOBILE BOTTOM BAR ============== -->
+<nav class="mbb" aria-label="Быстрые действия">
+  <div class="mbb-row">
+    <a href="#services" class="mbb-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Услуги</span>
+    </a>
+    <a href="#faq" class="mbb-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+      <span>FAQ</span>
+    </a>
+    <a href="tel:+77079062810" class="mbb-btn call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      <span>Звонок</span>
+    </a>
+    <a href="https://wa.me/77079062810" target="_blank" rel="noopener" class="mbb-btn wa">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.38c-.28-.14-1.66-.82-1.92-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.56.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.47l-.54-.01c-.18 0-.48.07-.74.35-.26.28-.97.95-.97 2.31 0 1.36 1 2.67 1.14 2.85.14.19 1.96 3 4.75 4.21.66.29 1.18.46 1.58.59.67.21 1.27.18 1.75.11.53-.08 1.66-.68 1.89-1.33.23-.65.23-1.2.16-1.33-.06-.12-.25-.2-.53-.34zM12 2.04C6.5 2.04 2.04 6.5 2.04 12c0 1.76.46 3.45 1.33 4.95L2 22l5.22-1.36c1.45.79 3.08 1.21 4.78 1.21 5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.03-5.17-2.92-7.05C17.17 3.07 14.66 2.04 12 2.04"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ============== BURGER MENU ============== -->
+<div class="bmenu" id="burgerMenu">
+  <div class="bmenu-ov" onclick="closeBurger()"></div>
+  <aside class="bmenu-panel">
+    <div class="bmenu-head">
+      <a href="#" class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">sanite<span class="x">x</span></span>
+      </a>
+      <button class="bmenu-close" onclick="closeBurger()" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="bmenu-body">
+      <div class="bmenu-grp">
+        <h5>Разделы</h5>
+        <a href="#services" onclick="closeBurger()">Услуги</a>
+        <a href="#methods" onclick="closeBurger()">Методы</a>
+        <a href="#why" onclick="closeBurger()">О&nbsp;нас</a>
+        <a href="#process" onclick="closeBurger()">Процесс</a>
+        <a href="#b2b" onclick="closeBurger()">Бизнесу</a>
+        <a href="#faq" onclick="closeBurger()">FAQ</a>
+        <a href="#contacts" onclick="closeBurger()">Контакты</a>
+      </div>
+
+      <div class="bmenu-grp">
+        <h5>Популярные услуги</h5>
+        <a href="#services" onclick="closeBurger()">Постельные клопы</a>
+        <a href="#services" onclick="closeBurger()">Тараканы</a>
+        <a href="#services" onclick="closeBurger()">Крысы и&nbsp;мыши</a>
+        <a href="#services" onclick="closeBurger()">Плесень и&nbsp;грибок</a>
+        <a href="#services" onclick="closeBurger()">Дезинфекция помещений</a>
+      </div>
+
+      <div class="bmenu-grp">
+        <h5>Связаться</h5>
+        <a href="tel:+77079062810" onclick="closeBurger()">+7 707 906 28 10</a>
+        <a href="https://wa.me/77079062810" target="_blank" rel="noopener" onclick="closeBurger()">WhatsApp</a>
+      </div>
+
+      <button class="btn btn-ink" style="width:100%;margin-top:12px" onclick="closeBurger();openModal('order')">
+        Вызвать мастера
+      </button>
+    </div>
+  </aside>
+</div>
+
+<!-- ============== MODAL: ORDER ============== -->
+<div class="modal" id="modalOrder" role="dialog" aria-modal="true">
+  <div class="modal-ov" onclick="closeModal('order')"></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Вызвать <em>мастера</em></h3>
+      <button class="modal-close" onclick="closeModal('order')" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" width="16" height="16"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form id="orderForm" onsubmit="return submitOrder(event)">
+        <div class="frow two">
+          <div class="ffield"><label>Имя *</label><input type="text" name="name" required placeholder="Как к вам обращаться"></div>
+          <div class="ffield"><label>Телефон *</label><input type="tel" name="phone" required placeholder="+7 ___ ___ __ __"></div>
+        </div>
+        <div class="frow two">
+          <div class="ffield"><label>Адрес</label><input type="text" name="address" placeholder="Район или адрес"></div>
+          <div class="ffield"><label>Тип объекта</label><select name="object">
+            <option value="">Выберите</option>
+            <option>Квартира</option>
+            <option>Частный дом</option>
+            <option>Офис</option>
+            <option>Ресторан / кафе</option>
+            <option>Магазин</option>
+            <option>Склад</option>
+            <option>Дача / участок</option>
+            <option>Другое</option>
+          </select></div>
+        </div>
+        <div class="frow two">
+          <div class="ffield"><label>Услуга</label><select name="service" id="orderService">
+            <option value="">Выберите услугу</option>
+            <option>Постельные клопы</option>
+            <option>Тараканы</option>
+            <option>Крысы и мыши</option>
+            <option>Муравьи</option>
+            <option>Блохи</option>
+            <option>Комары · мошка</option>
+            <option>Клещи</option>
+            <option>Пауки и каракурты</option>
+            <option>Осы · шершни</option>
+            <option>Моль</option>
+            <option>Мокрицы</option>
+            <option>Чешуйницы</option>
+            <option>Кожееды</option>
+            <option>Плесень и грибок</option>
+            <option>Запах · озонирование</option>
+            <option>Дезинфекция помещений</option>
+            <option>Кроты</option>
+            <option>Змеи</option>
+            <option>Консультация</option>
+          </select></div>
+          <div class="ffield"><label>Площадь, м²</label><input type="text" name="area" placeholder="Например, 65"></div>
+        </div>
+        <div class="frow">
+          <div class="ffield"><label>Комментарий</label><textarea name="comment" placeholder="Когда заметили, особенности"></textarea></div>
+        </div>
+        <button type="submit" class="fsubmit">
+          Отправить заявку
+        </button>
+        <p class="fnote">Связь — в течение 10 минут. Заявка отправится в WhatsApp менеджера.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============== MODAL: LEGAL ============== -->
+<div class="modal" id="modalLegal" role="dialog" aria-modal="true">
+  <div class="modal-ov" onclick="closeModal('legal')"></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>КП для&nbsp;<em>юрлица</em></h3>
+      <button class="modal-close" onclick="closeModal('legal')" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" width="16" height="16"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form id="legalForm" onsubmit="return submitLegal(event)">
+        <div class="frow two">
+          <div class="ffield"><label>Компания *</label><input type="text" name="company" required placeholder="ТОО «...»"></div>
+          <div class="ffield"><label>БИН *</label><input type="text" name="bin" required maxlength="12" placeholder="12 цифр"></div>
+        </div>
+        <div class="frow two">
+          <div class="ffield"><label>Контактное лицо *</label><input type="text" name="contact" required placeholder="ФИО"></div>
+          <div class="ffield"><label>Телефон *</label><input type="tel" name="phone" required placeholder="+7 ___ ___ __ __"></div>
+        </div>
+        <div class="frow"><div class="ffield"><label>Email *</label><input type="email" name="email" required placeholder="name@company.kz"></div></div>
+        <div class="frow"><div class="ffield"><label>Описание объекта</label><textarea name="scope" placeholder="Тип бизнеса, площадь, периодичность ТО"></textarea></div></div>
+        <label class="fcheck"><input type="checkbox" name="contract">Нужен договор на регулярное ТО</label>
+        <button type="submit" class="fsubmit">Запросить КП</button>
+        <p class="fnote">Подготовим КП и отправим на email в течение 24 часов.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============== TOAST ============== -->
+<div class="toast" id="toast" role="status">Заявка отправлена · перезвоним в 10 минут</div>
+
+<script>
+/* ===== SCROLL PROGRESS + STICKY HEADER + BACK TO TOP ===== */
+const bar = document.getElementById('scrollBar');
+const btt = document.getElementById('bttBtn');
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const sc = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  bar.style.width = sc + '%';
+  if (h.scrollTop > 20) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+  if (h.scrollTop > 500) btt.classList.add('show'); else btt.classList.remove('show');
+}, {passive:true});
+btt.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ===== BURGER ===== */
+const burgerBtn = document.getElementById('burgerBtn');
+const burgerMenu = document.getElementById('burgerMenu');
+burgerBtn.addEventListener('click', () => { burgerMenu.classList.add('open'); document.body.style.overflow='hidden'; });
+function closeBurger(){ burgerMenu.classList.remove('open'); document.body.style.overflow=''; }
+window.closeBurger = closeBurger;
+
+/* ===== FAQ ===== */
+document.querySelectorAll('.faq-i').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-i').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== MODALS ===== */
+function openModal(type, service=''){
+  const m = document.getElementById(type === 'order' ? 'modalOrder' : 'modalLegal');
+  if (!m) return;
+  m.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (type === 'order' && service) {
+    const sel = document.getElementById('orderService');
+    if (sel) [...sel.options].forEach(o => { if (o.value === service || o.text === service) sel.value = o.value; });
+  }
+}
+function closeModal(type){
+  const m = document.getElementById(type === 'order' ? 'modalOrder' : 'modalLegal');
+  if (!m) return;
+  m.classList.remove('open');
+  document.body.style.overflow = '';
+}
+window.openModal = openModal;
+window.closeModal = closeModal;
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
+    document.body.style.overflow = '';
+    closeBurger();
+  }
+});
+
+/* ===== FORMS — отправка в WhatsApp ===== */
+const PHONE = '77079062810';
+let toastTimer = null;
+function showToast(text){
+  const t = document.getElementById('toast');
+  t.textContent = text || 'Заявка отправлена · перезвоним в 10 минут';
+  t.classList.add('show');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 4000);
+}
+document.getElementById('toast').addEventListener('click', () => {
+  document.getElementById('toast').classList.remove('show');
+});
+
+function submitOrder(e){
+  e.preventDefault();
+  const f = e.target;
+  const d = Object.fromEntries(new FormData(f).entries());
+  let msg = `*Новая заявка — Sanitex*%0A`;
+  msg += `Имя: ${d.name}%0A`;
+  msg += `Телефон: ${d.phone}%0A`;
+  if (d.address) msg += `Адрес: ${d.address}%0A`;
+  if (d.object) msg += `Объект: ${d.object}%0A`;
+  if (d.service) msg += `Услуга: ${d.service}%0A`;
+  if (d.area) msg += `Площадь: ${d.area} м²%0A`;
+  if (d.comment) msg += `Комментарий: ${d.comment}%0A`;
+  window.open(`https://wa.me/${PHONE}?text=${msg}`, '_blank');
+  showToast();
+  closeModal('order');
+  f.reset();
+  return false;
+}
+
+function submitLegal(e){
+  e.preventDefault();
+  const f = e.target;
+  const d = Object.fromEntries(new FormData(f).entries());
+  let msg = `*Запрос КП — Sanitex (юрлицо)*%0A`;
+  msg += `Компания: ${d.company}%0A`;
+  msg += `БИН: ${d.bin}%0A`;
+  msg += `Контакт: ${d.contact}%0A`;
+  msg += `Телефон: ${d.phone}%0A`;
+  msg += `Email: ${d.email}%0A`;
+  if (d.scope) msg += `Объект: ${d.scope}%0A`;
+  if (d.contract) msg += `Договор на регулярное ТО — да%0A`;
+  window.open(`https://wa.me/${PHONE}?text=${msg}`, '_blank');
+  showToast('Запрос отправлен · КП в течение 24 часов');
+  closeModal('legal');
+  f.reset();
+  return false;
+}
+window.submitOrder = submitOrder;
+window.submitLegal = submitLegal;
+
+/* ===== YEAR + SMOOTH SCROLL ===== */
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e){
+    const id = this.getAttribute('href');
+    if (id.length > 1) {
+      const t = document.querySelector(id);
+      if (t) {
+        e.preventDefault();
+        const y = t.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({top:y, behavior:'smooth'});
+        closeBurger();
+      }
+    }
+  });
+});
+
+/* ===== REVEAL ON SCROLL ===== */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('in'); });
+}, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('section .s-title, section .s-lead, .svc, .met, .why-i, .step, .b2b-list li').forEach(el => {
+  el.classList.add('reveal');
+  io.observe(el);
+});
+</script>
+
+</body>
+</html>
