@@ -104,12 +104,7 @@ section{padding:72px 0;position:relative}
 
 .s-head{margin-bottom:40px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
 @media (max-width:767px){.s-head{margin-bottom:28px}}
-.s-eyebrow{
-  display:inline-block;
-  padding:6px 14px;border-radius:6px;background:var(--green-soft);color:var(--green-d);
-  font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  margin-bottom:18px;
-}
+.s-eyebrow{display:none}
 .s-head h2{
   font-weight:800;
   font-size:clamp(28px,4.2vw,46px);line-height:1.08;letter-spacing:-.025em;color:var(--ink);
@@ -167,41 +162,70 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
 @media (max-width:1023px){nav.nav{display:none}.burger{display:inline-flex}}
 @media (max-width:560px){.phone-btn span{display:none}.phone-btn{padding:10px 12px}}
 
-/* ========== HERO (LIGHT, photo right) ========== */
+/* ========== HERO (фото на фоне) ========== */
 .hero{
-  position:relative;background:var(--bg);
-  padding:60px 0 80px;overflow:hidden;
+  position:relative;
+  min-height:calc(78vh - var(--header-h));
+  max-height:680px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:#0a0a0a;
 }
-@media (max-width:767px){.hero{padding:36px 0 48px}}
-.hero-grid{
-  display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
-}
-@media (max-width:959px){.hero-grid{grid-template-columns:1fr;gap:32px}}
+@media (max-width:767px){.hero{min-height:480px}}
 
-.hero-left{position:relative;z-index:2}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:6px;
-  background:var(--green-soft);color:var(--green-d);
-  font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
-  margin-bottom:22px;
+.hero-bg{
+  position:absolute;inset:0;z-index:1;
 }
-.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.hero-bg::after{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.85) 100%),
+    linear-gradient(90deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.25) 60%,transparent 100%);
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:80px;z-index:2;
+  background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;
+}
+
+.hero-inner{
+  position:relative;z-index:3;width:100%;
+  padding:60px 0 80px;
+}
+@media (max-width:767px){.hero-inner{padding:40px 0 60px}}
+
+.hero-content{
+  max-width:680px;
+}
 
 .hero h1{
   font-weight:900;
-  font-size:clamp(34px,5.4vw,62px);line-height:1.02;letter-spacing:-.035em;color:var(--ink);
-  margin-bottom:22px;
+  font-size:clamp(40px,6.8vw,80px);
+  line-height:1;
+  letter-spacing:-.035em;
+  color:#fff;
+  margin-bottom:18px;
+  text-shadow:0 2px 24px rgba(0,0,0,.4);
 }
-.hero h1 .g{color:var(--green);position:relative;display:inline-block}
-.hero h1 .g::after{
-  content:"";position:absolute;left:0;right:0;bottom:.05em;height:.18em;background:var(--green-soft);z-index:-1;
+.hero h1 .g{
+  color:var(--green-l);
 }
 
 .hero p.hero-sub{
-  font-size:clamp(15px,1.5vw,17px);color:var(--ink-3);line-height:1.6;margin-bottom:30px;max-width:520px;
+  font-size:clamp(16px,1.7vw,20px);
+  color:rgba(255,255,255,.9);
+  line-height:1.45;
+  margin-bottom:32px;
+  max-width:520px;
+  font-weight:500;
+  text-shadow:0 1px 8px rgba(0,0,0,.3);
 }
 
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
@@ -214,41 +238,13 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
 .btn-black:hover{background:var(--green);transform:translateY(-1px)}
 .btn-out{background:#fff;color:var(--ink);border-color:var(--line-2)}
 .btn-out:hover{border-color:var(--green);color:var(--green-d);background:var(--green-tint)}
+.btn-light{
+  background:rgba(255,255,255,.95);color:var(--ink);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.btn-light:hover{background:#fff;transform:translateY(-1px)}
 
-.hero-trust{display:flex;gap:24px;flex-wrap:wrap}
-.hero-trust .it{
-  display:flex;flex-direction:column;gap:2px;
-}
-.hero-trust .it .v{font-weight:800;font-size:22px;color:var(--ink);letter-spacing:-.02em;line-height:1.1}
-.hero-trust .it .v .g{color:var(--green)}
-.hero-trust .it .l{font-size:12px;color:var(--ink-3);font-weight:500}
-
-.hero-right{position:relative}
-.hero-photo{
-  position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--bg-2);
-  box-shadow:0 30px 60px -20px rgba(0,0,0,.18);
-}
-@media (max-width:959px){.hero-photo{aspect-ratio:16/11;max-height:420px}}
-.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-photo::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.25));
-  pointer-events:none;
-}
-.hero-photo-tag{
-  position:absolute;left:20px;bottom:20px;z-index:2;
-  background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
-  border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:12px;
-  box-shadow:0 10px 30px -8px rgba(0,0,0,.2);
-  max-width:calc(100% - 40px);
-}
-.hero-photo-tag .ic{
-  width:36px;height:36px;border-radius:8px;background:var(--green);color:#fff;
-  display:grid;place-items:center;flex-shrink:0;
-}
-.hero-photo-tag .ic svg{width:18px;height:18px}
-.hero-photo-tag .tx .t1{font-size:13px;font-weight:800;color:var(--ink);line-height:1.2}
-.hero-photo-tag .tx .t2{font-size:11.5px;color:var(--ink-3);margin-top:2px}
+.hero-trust{display:none}
 
 /* ========== PROMO BANNER ========== */
 .promo{
@@ -291,20 +287,19 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
 
 .svc{
   background:#fff;
-  border:1px solid var(--line);
+  border:1.5px solid var(--green);
   border-radius:14px;
   cursor:pointer;
   position:relative;
   overflow:hidden;
   display:flex;
   flex-direction:column;
-  box-shadow:var(--shadow-sm);
-  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  box-shadow:0 4px 16px -4px rgba(0,166,81,.18), 0 1px 3px rgba(0,166,81,.08);
+  transition:transform .22s ease, box-shadow .22s ease;
 }
 .svc:hover{
   transform:translateY(-3px);
-  box-shadow:var(--shadow-lg);
-  border-color:var(--green);
+  box-shadow:0 14px 32px -8px rgba(0,166,81,.32), 0 4px 10px rgba(0,166,81,.12);
 }
 
 .svc-img{
@@ -328,17 +323,17 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
   line-height:1.35;
   text-align:center;
   background:#fff;
-  border-top:1px solid var(--line);
+  border-top:1px solid var(--green-soft);
 }
 .svc-name .strong{
   display:block;
   margin-top:3px;
-  color:var(--ink);
+  color:var(--green-d);
   font-weight:800;
   font-size:14.5px;
   letter-spacing:-.01em;
 }
-.svc:hover .svc-name .strong{color:var(--green-d)}
+.svc:hover .svc-name .strong{color:var(--green)}
 
 @media (max-width:680px){
   .svc-name{padding:11px 8px 13px;font-size:12px}
@@ -384,9 +379,10 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
 /* ========== TEAM ========== */
 #team{background:var(--bg)}
 .team-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:880px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:0 auto;
 }
-@media (max-width:680px){.team-grid{grid-template-columns:1fr;gap:18px}}
+@media (max-width:959px){.team-grid{grid-template-columns:repeat(2,1fr);gap:18px;max-width:760px}}
+@media (max-width:560px){.team-grid{grid-template-columns:1fr;gap:16px;max-width:420px}}
 
 .team-card{
   background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);
@@ -660,48 +656,25 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
   </div>
 </header>
 
-<!-- HERO (light, photo right) -->
+<!-- HERO (фото на фоне, минимум текста) -->
 <section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-left">
-        <span class="hero-badge">
-          <span class="dot"></span>
-          <span data-i18n="hero.badge">Алматы и область · Сертифицировано</span>
-        </span>
-        <h1 data-i18n="hero.title">Чистый дом без&nbsp;<span class="g">вредителей</span> и&nbsp;запахов</h1>
-        <p class="hero-sub" data-i18n="hero.sub">Sanitex — профессиональная дезинфекция, дезинсекция и&nbsp;дератизация в&nbsp;Алматы. Сертифицированные препараты, договор и&nbsp;гарантия до&nbsp;12&nbsp;месяцев. Безопасно для&nbsp;детей и&nbsp;животных.</p>
+  <div class="hero-bg">
+    <img src="/images/hero-bg.jpg" alt="">
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-content">
+      <h1 data-i18n="hero.title">Дезинфекция в&nbsp;<span class="g">Алматы</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">Профессиональное уничтожение вредителей с&nbsp;гарантией</p>
 
-        <div class="hero-cta">
-          <a href="https://wa.me/77079062810?text=Здравствуйте%2C%20пишу%20с%20сайта%20sanitex.kz" target="_blank" rel="noopener" class="btn btn-green">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.5 14.38c-.28-.14-1.66-.82-1.92-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.56.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.47l-.54-.01c-.18 0-.48.07-.74.35-.26.28-.97.95-.97 2.31 0 1.36 1 2.67 1.14 2.85.14.19 1.96 3 4.75 4.21.66.29 1.18.46 1.58.59.67.21 1.27.18 1.75.11.53-.08 1.66-.68 1.89-1.33.23-.65.23-1.2.16-1.33-.06-.12-.25-.2-.53-.34zM12 2.04C6.5 2.04 2.04 6.5 2.04 12c0 1.76.46 3.45 1.33 4.95L2 22l5.22-1.36c1.45.79 3.08 1.21 4.78 1.21 5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.03-5.17-2.92-7.05C17.17 3.07 14.66 2.04 12 2.04"/></svg>
-            <span data-i18n="hero.btnWa">Написать в WhatsApp</span>
-          </a>
-          <button class="btn btn-out" onclick="openModal('order')">
-            <span data-i18n="hero.btnOrder">Оставить заявку</span>
-          </button>
-        </div>
-
-        <div class="hero-trust">
-          <div class="it"><span class="v"><span class="g">12</span> мес.</span><span class="l" data-i18n="hero.t1">гарантия</span></div>
-          <div class="it"><span class="v"><span class="g">24</span>/7</span><span class="l" data-i18n="hero.t2">приём заявок</span></div>
-          <div class="it"><span class="v"><span class="g">1–3</span> ч</span><span class="l" data-i18n="hero.t3">подача мастера</span></div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-photo">
-          <img src="/images/hero-photo.jpg" alt="Профессиональная дезинфекция Sanitex">
-          <div class="hero-photo-tag">
-            <div class="ic">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
-            </div>
-            <div class="tx">
-              <div class="t1" data-i18n="hero.tag1">Сертифицированные препараты</div>
-              <div class="t2" data-i18n="hero.tag2">Минздрав РК · класс безопасности IV</div>
-            </div>
-          </div>
-        </div>
+      <div class="hero-cta">
+        <a href="https://wa.me/77079062810?text=Здравствуйте%2C%20нужна%20консультация%20по%20дезинфекции" target="_blank" rel="noopener" class="btn btn-green">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.5 14.38c-.28-.14-1.66-.82-1.92-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.56.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.47l-.54-.01c-.18 0-.48.07-.74.35-.26.28-.97.95-.97 2.31 0 1.36 1 2.67 1.14 2.85.14.19 1.96 3 4.75 4.21.66.29 1.18.46 1.58.59.67.21 1.27.18 1.75.11.53-.08 1.66-.68 1.89-1.33.23-.65.23-1.2.16-1.33-.06-.12-.25-.2-.53-.34zM12 2.04C6.5 2.04 2.04 6.5 2.04 12c0 1.76.46 3.45 1.33 4.95L2 22l5.22-1.36c1.45.79 3.08 1.21 4.78 1.21 5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.03-5.17-2.92-7.05C17.17 3.07 14.66 2.04 12 2.04"/></svg>
+          <span data-i18n="hero.btnWa">Написать в WhatsApp</span>
+        </a>
+        <a href="tel:+77079062810" class="btn btn-light">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <span data-i18n="hero.btnCall">Позвонить</span>
+        </a>
       </div>
     </div>
   </div>
@@ -759,78 +732,78 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
     </div>
 
     <div class="svc-grid">
-      <div class="svc" onclick="openModal('order','Уничтожение клопов')">
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20клопов%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-bedbug.jpg" alt="Клопы" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.1.pre">Уничтожение<span class="strong" data-i18n="svc.1.main">клопов</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение тараканов')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20тараканов%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-cockroach.jpg" alt="Тараканы" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.2.pre">Уничтожение<span class="strong" data-i18n="svc.2.main">тараканов</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Устранение неприятного запаха')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Устранение%20неприятного%20запаха%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-odor.jpg" alt="Запах" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.3.pre">Устранение<span class="strong" data-i18n="svc.3.main">запахов</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение грибка')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20грибка%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-fungus.jpg" alt="Грибок" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.4.pre">Уничтожение<span class="strong" data-i18n="svc.4.main">грибка</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение плесени')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20плесени%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-mold.jpg" alt="Плесень" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.5.pre">Уничтожение<span class="strong" data-i18n="svc.5.main">плесени</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Выведение кротов')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Выведение%20кротов%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-mole.jpg" alt="Кроты" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.6.pre">Выведение<span class="strong" data-i18n="svc.6.main">кротов</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Выведение змей')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Выведение%20змей%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-snake.jpg" alt="Змеи" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.7.pre">Выведение<span class="strong" data-i18n="svc.7.main">змей</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение кожееда')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20кожееда%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-carpetbeetle.jpg" alt="Кожеед" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.8.pre">Уничтожение<span class="strong" data-i18n="svc.8.main">кожееда</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Выведение крыс и мышей')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20крыс%20и%20мышей%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-rat.jpg" alt="Крысы" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.9.pre">Выведение<span class="strong" data-i18n="svc.9.main">крыс и&nbsp;мышей</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение комаров')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20комаров%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-mosquito.jpg" alt="Комары" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.10.pre">Уничтожение<span class="strong" data-i18n="svc.10.main">комаров</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение мокриц')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20мокриц%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-woodlouse.jpg" alt="Мокрицы" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.11.pre">Уничтожение<span class="strong" data-i18n="svc.11.main">мокриц</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение чешуйниц')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20чешуйниц%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-silverfish.jpg" alt="Чешуйницы" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.12.pre">Уничтожение<span class="strong" data-i18n="svc.12.main">чешуйниц</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение пауков и каракуртов')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20пауков%20и%20каракуртов%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-spider.jpg" alt="Пауки" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.13.pre">Уничтожение<span class="strong" data-i18n="svc.13.main">пауков</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение клещей')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20клещей%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-tick.jpg" alt="Клещи" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.14.pre">Уничтожение<span class="strong" data-i18n="svc.14.main">клещей</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение осиных гнёзд')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20осиных%20гнёзд%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-wasp.jpg" alt="Осы" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.15.pre">Уничтожение<span class="strong" data-i18n="svc.15.main">осиных гнёзд</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение муравьёв')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20муравьёв%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-ant.jpg" alt="Муравьи" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.16.pre">Уничтожение<span class="strong" data-i18n="svc.16.main">муравьёв</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение блох')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20блох%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-flea.jpg" alt="Блохи" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.17.pre">Уничтожение<span class="strong" data-i18n="svc.17.main">блох</span></div>
-      </div>
-      <div class="svc" onclick="openModal('order','Уничтожение моли')">
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20моли%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-moth.jpg" alt="Моль" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.18.pre">Уничтожение<span class="strong" data-i18n="svc.18.main">моли</span></div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -983,6 +956,17 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
           <div class="role" data-i18n="team.2.role">Дезинфектор</div>
           <h3>Сагитов Бакытжан</h3>
           <p class="exp" data-i18n="team.2.exp">Работа с квартирами, домами и офисами. Специализация: гелевые методы, дератизация, барьерная защита.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="/images/team-temirlan.jpg" alt="Кадылкумар Темирлан" loading="lazy">
+        </div>
+        <div class="team-info">
+          <div class="role" data-i18n="team.3.role">Дезинфектор</div>
+          <h3>Кадылкумар Темирлан</h3>
+          <p class="exp" data-i18n="team.3.exp">Выезды по Алматы и области. Специализация: уничтожение клопов, блох, обработка частных домов и дачных участков.</p>
         </div>
       </div>
     </div>
@@ -1360,12 +1344,9 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
 const i18n = {
   ru: {
     'nav.services':'Услуги','nav.methods':'Методы','nav.team':'Команда','nav.process':'Как работаем','nav.faq':'FAQ','nav.contacts':'Контакты',
-    'hero.badge':'Алматы и область · Сертифицировано',
-    'hero.title':'Чистый дом без&nbsp;<span class="g">вредителей</span> и&nbsp;запахов',
-    'hero.sub':'Sanitex — профессиональная дезинфекция, дезинсекция и дератизация в Алматы. Сертифицированные препараты, договор и гарантия до 12 месяцев. Безопасно для детей и животных.',
-    'hero.btnWa':'Написать в WhatsApp','hero.btnOrder':'Оставить заявку',
-    'hero.t1':'гарантия','hero.t2':'приём заявок','hero.t3':'подача мастера',
-    'hero.tag1':'Сертифицированные препараты','hero.tag2':'Минздрав РК · класс безопасности IV',
+    'hero.title':'Дезинфекция в&nbsp;<span class="g">Алматы</span>',
+    'hero.sub':'Профессиональное уничтожение вредителей с&nbsp;гарантией',
+    'hero.btnWa':'Написать в WhatsApp','hero.btnCall':'Позвонить',
     'promo.title':'Заявка сейчас — <span class="g">выезд сегодня</span>',
     'promo.sub':'Свяжитесь с нами — рассчитаем стоимость за 2 минуты и предложим удобное время',
     'promo.call':'Позвонить',
@@ -1405,6 +1386,7 @@ const i18n = {
     'team.lead':'Опытные мастера с профильным обучением и аттестацией. Каждый сотрудник проходит обязательную подготовку по работе с дезинфекционными препаратами.',
     'team.1.role':'Старший дезинфектор','team.1.exp':'Руководит выездными работами. Специализация: сложные случаи заражения клопами и тараканами, обработка крупных объектов.',
     'team.2.role':'Дезинфектор','team.2.exp':'Работа с квартирами, домами и офисами. Специализация: гелевые методы, дератизация, барьерная защита.',
+    'team.3.role':'Дезинфектор','team.3.exp':'Выезды по Алматы и области. Специализация: уничтожение клопов, блох, обработка частных домов и дачных участков.',
     'proc.eyebrow':'Как мы работаем','proc.title':'От заявки до&nbsp;<span class="g">результата</span>',
     'proc.lead':'Прозрачный процесс из 5 шагов — от первого звонка до контрольной проверки эффективности.',
     'proc.1.t':'Заявка','proc.1.d':'Звоните, пишете в WhatsApp или заполняете форму на сайте.',
@@ -1470,12 +1452,9 @@ const i18n = {
   },
   kz: {
     'nav.services':'Қызметтер','nav.methods':'Әдістер','nav.team':'Команда','nav.process':'Қалай жұмыс істейміз','nav.faq':'Сұрақтар','nav.contacts':'Байланыс',
-    'hero.badge':'Алматы және облысы · Сертификатталған',
-    'hero.title':'<span class="g">Зиянкестерсіз</span> және иіссіз таза үй',
-    'hero.sub':'Sanitex — Алматыдағы кәсіби дезинфекция, дезинсекция және дератизация. Сертификатталған препараттар, шарт және 12 айға дейінгі кепілдік. Балалар мен үй жануарларына қауіпсіз.',
-    'hero.btnWa':'WhatsApp арқылы жазу','hero.btnOrder':'Өтінім қалдыру',
-    'hero.t1':'кепілдік','hero.t2':'өтінім қабылдау','hero.t3':'маман жіберу',
-    'hero.tag1':'Сертификатталған препараттар','hero.tag2':'ҚР Денсаулық сақтау · IV қауіпсіздік класы',
+    'hero.title':'<span class="g">Алматыдағы</span> дезинфекция',
+    'hero.sub':'Кепілдікпен зиянкестерді кәсіби жою',
+    'hero.btnWa':'WhatsApp арқылы жазу','hero.btnCall':'Қоңырау шалу',
     'promo.title':'Қазір өтінім — <span class="g">бүгін шығу</span>',
     'promo.sub':'Бізбен байланысыңыз — 2 минутта құнын есептейміз және ыңғайлы уақыт ұсынамыз',
     'promo.call':'Қоңырау шалу',
@@ -1515,6 +1494,7 @@ const i18n = {
     'team.lead':'Бейіндік оқыту мен аттестациядан өткен тәжірибелі мамандар. Әрбір қызметкер дезинфекциялық препараттармен жұмыс істеу бойынша міндетті дайындықтан өтеді.',
     'team.1.role':'Аға дезинфектор','team.1.exp':'Шығу жұмыстарын басқарады. Мамандануы: қандала мен тарақанмен күрделі зақымдану жағдайлары, ірі нысандарды өңдеу.',
     'team.2.role':'Дезинфектор','team.2.exp':'Пәтерлермен, үйлермен және кеңселермен жұмыс. Мамандануы: гель әдістері, дератизация, тосқауыл қорғаныс.',
+    'team.3.role':'Дезинфектор','team.3.exp':'Алматы мен облысы бойынша шығулар. Мамандануы: қандала, бүрге жою, жеке үйлер мен саяжай учаскелерін өңдеу.',
     'proc.eyebrow':'Қалай жұмыс істейміз','proc.title':'Өтінімнен <span class="g">нәтижеге</span> дейін',
     'proc.lead':'5 қадамнан тұратын ашық процесс — алғашқы қоңыраудан тиімділікті бақылауға дейін.',
     'proc.1.t':'Өтінім','proc.1.d':'Қоңырау шалу, WhatsApp-қа жазу немесе сайттағы форманы толтыру.',
