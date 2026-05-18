@@ -165,8 +165,8 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
 /* ========== HERO (фото на фоне) ========== */
 .hero{
   position:relative;
-  min-height:calc(78vh - var(--header-h));
-  max-height:680px;
+  min-height:calc(88vh - var(--header-h));
+  max-height:780px;
   display:flex;
   align-items:flex-end;
   overflow:hidden;
@@ -186,13 +186,14 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
 }
 .hero-bg img{
   width:100%;height:100%;object-fit:cover;display:block;
+  object-position:center top;
 }
 .hero-bg img:not([src]),.hero-bg img[src=""]{display:none}
 .hero-bg::after{
   content:"";
   position:absolute;inset:0;
   background:
-    linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.88) 100%);
+    linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.7) 75%,rgba(0,0,0,.92) 100%);
 }
 .hero::after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:60px;z-index:2;
