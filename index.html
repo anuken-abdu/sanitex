@@ -347,25 +347,63 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
   .svc-name .strong{font-size:13px}
 }
 
-/* ========== METHODS ========== */
+/* ========== METHODS (horizontal scroll) ========== */
 #methods{background:var(--bg-2)}
-.met-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-@media (max-width:767px){.met-grid{grid-template-columns:1fr}}
+.met-scroll-wrap{
+  position:relative;
+  margin:0 -24px;
+}
+@media (max-width:480px){.met-scroll-wrap{margin:0 -16px}}
+
+.met-grid{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  padding:8px 24px 22px;
+  scroll-padding-left:24px;
+  scroll-behavior:smooth;
+  scrollbar-width:thin;
+  scrollbar-color:var(--green) var(--bg-3);
+}
+@media (max-width:480px){.met-grid{padding:8px 16px 18px;scroll-padding-left:16px}}
+.met-grid::-webkit-scrollbar{height:6px}
+.met-grid::-webkit-scrollbar-track{background:var(--bg-3);border-radius:3px}
+.met-grid::-webkit-scrollbar-thumb{background:var(--green);border-radius:3px}
+.met-grid::-webkit-scrollbar-thumb:hover{background:var(--green-d)}
 
 .met{
-  background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;
-  display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;
-  transition:all .22s ease;
+  flex:0 0 calc((100% - 36px)/3);
+  min-width:280px;
+  scroll-snap-align:start;
+  background:#fff;
+  border:1.5px solid var(--green);
+  border-radius:14px;
+  padding:26px 22px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  align-items:flex-start;
+  box-shadow:0 4px 16px -4px rgba(0,166,81,.18);
+  transition:transform .22s ease, box-shadow .22s ease;
 }
-.met:hover{border-color:var(--green);box-shadow:var(--shadow);transform:translateY(-2px)}
+.met:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 32px -8px rgba(0,166,81,.3);
+}
+@media (max-width:959px){.met{flex:0 0 calc((100% - 18px)/2)}}
+@media (max-width:680px){.met{flex:0 0 82%;min-width:0}}
+
 .met-num{
-  width:56px;height:56px;border-radius:12px;background:var(--green);color:#fff;
-  display:grid;place-items:center;font-weight:800;font-size:22px;letter-spacing:-.02em;
+  width:48px;height:48px;border-radius:10px;background:var(--green);color:#fff;
+  display:grid;place-items:center;font-weight:800;font-size:20px;letter-spacing:-.02em;
+  flex-shrink:0;
 }
-.met h3{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:8px;letter-spacing:-.015em}
-.met p{font-size:14px;color:var(--ink-3);line-height:1.6;margin-bottom:12px}
+.met h3{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:8px;letter-spacing:-.015em}
+.met p{font-size:13.5px;color:var(--ink-3);line-height:1.55;margin-bottom:12px}
 .met-tags{display:flex;flex-wrap:wrap;gap:6px}
-.met-tags span{padding:4px 10px;background:var(--green-soft);color:var(--green-d);border-radius:5px;font-size:11.5px;font-weight:700;letter-spacing:.03em}
+.met-tags span{padding:4px 10px;background:var(--green-soft);color:var(--green-d);border-radius:5px;font-size:11px;font-weight:700;letter-spacing:.03em}
 
 /* ========== WHY ========== */
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -493,16 +531,6 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
   object-fit:contain;
   padding:14px;
   display:block;
-}
-.cert-name{
-  padding:12px 14px 14px;
-  font-size:13px;
-  font-weight:700;
-  color:var(--ink);
-  text-align:center;
-  line-height:1.3;
-  border-top:1px solid var(--green-soft);
-  background:#fff;
 }
 
 .scroll-hint{
@@ -649,6 +677,23 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
 .foot-bot{padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:#5e5e5e}
 .foot-bot a{color:#878787;transition:color .15s ease}
 .foot-bot a:hover{color:var(--green-l)}
+.foot-dev{display:inline-flex;align-items:center;gap:6px}
+.foot-dev .dev-link{
+  display:inline-flex;align-items:center;gap:5px;
+  color:var(--green-l);font-weight:700;
+  padding:2px 6px;border-radius:5px;
+  transition:all .15s ease;
+}
+.foot-dev .dev-link:hover{
+  color:#fff;background:var(--green);
+}
+.foot-dev .dev-link::before{
+  content:"";
+  width:12px;height:12px;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'><path d='M17.5 14.38c-.28-.14-1.66-.82-1.92-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.56.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.47l-.54-.01c-.18 0-.48.07-.74.35-.26.28-.97.95-.97 2.31 0 1.36 1 2.67 1.14 2.85.14.19 1.96 3 4.75 4.21.66.29 1.18.46 1.58.59.67.21 1.27.18 1.75.11.53-.08 1.66-.68 1.89-1.33.23-.65.23-1.2.16-1.33-.06-.12-.25-.2-.53-.34zM12 2.04C6.5 2.04 2.04 6.5 2.04 12c0 1.76.46 3.45 1.33 4.95L2 22l5.22-1.36c1.45.79 3.08 1.21 4.78 1.21 5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.03-5.17-2.92-7.05C17.17 3.07 14.66 2.04 12 2.04'/></svg>") center/contain no-repeat;
+  mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'><path d='M17.5 14.38c-.28-.14-1.66-.82-1.92-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.56.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.47l-.54-.01c-.18 0-.48.07-.74.35-.26.28-.97.95-.97 2.31 0 1.36 1 2.67 1.14 2.85.14.19 1.96 3 4.75 4.21.66.29 1.18.46 1.58.59.67.21 1.27.18 1.75.11.53-.08 1.66-.68 1.89-1.33.23-.65.23-1.2.16-1.33-.06-.12-.25-.2-.53-.34zM12 2.04C6.5 2.04 2.04 6.5 2.04 12c0 1.76.46 3.45 1.33 4.95L2 22l5.22-1.36c1.45.79 3.08 1.21 4.78 1.21 5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.03-5.17-2.92-7.05C17.17 3.07 14.66 2.04 12 2.04'/></svg>") center/contain no-repeat;
+}
 
 /* ========== MOBILE BOTTOM BAR ========== */
 .mbb{
@@ -912,59 +957,66 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
       <p class="lead" data-i18n="met.lead">Подбираем метод индивидуально — в зависимости от типа вредителя, площади и особенностей помещения.</p>
     </div>
 
-    <div class="met-grid">
-      <div class="met">
-        <div class="met-num">1</div>
-        <div>
-          <h3 data-i18n="met.1.title">Горячий туман</h3>
-          <p data-i18n="met.1.text">Препарат нагревается до 60°С и распыляется парогенератором. Микрокапли проникают во все щели и мебель. Эффективен против тараканов, клопов, блох.</p>
-          <div class="met-tags">
-            <span data-i18n="met.1.tag1">максимум проникновения</span>
-            <span data-i18n="met.1.tag2">тараканы</span>
-            <span data-i18n="met.1.tag3">клопы</span>
+    <div class="met-scroll-wrap">
+      <div class="met-grid">
+        <div class="met">
+          <div class="met-num">1</div>
+          <div>
+            <h3 data-i18n="met.1.title">Горячий туман</h3>
+            <p data-i18n="met.1.text">Препарат нагревается до 60°С и распыляется парогенератором. Микрокапли проникают во все щели и мебель. Эффективен против тараканов, клопов, блох.</p>
+            <div class="met-tags">
+              <span data-i18n="met.1.tag1">максимум проникновения</span>
+              <span data-i18n="met.1.tag2">тараканы</span>
+              <span data-i18n="met.1.tag3">клопы</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="met">
-        <div class="met-num">2</div>
-        <div>
-          <h3 data-i18n="met.2.title">Холодный туман</h3>
-          <p data-i18n="met.2.text">Распыление препарата под высоким давлением без нагрева. Капли мельче, оседают равномерно. Безопасен для помещений с электроникой и мебелью.</p>
-          <div class="met-tags">
-            <span data-i18n="met.2.tag1">безопасный</span>
-            <span data-i18n="met.2.tag2">универсальный</span>
-            <span data-i18n="met.2.tag3">квартиры</span>
+        <div class="met">
+          <div class="met-num">2</div>
+          <div>
+            <h3 data-i18n="met.2.title">Холодный туман</h3>
+            <p data-i18n="met.2.text">Распыление препарата под высоким давлением без нагрева. Капли мельче, оседают равномерно. Безопасен для помещений с электроникой и мебелью.</p>
+            <div class="met-tags">
+              <span data-i18n="met.2.tag1">безопасный</span>
+              <span data-i18n="met.2.tag2">универсальный</span>
+              <span data-i18n="met.2.tag3">квартиры</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="met">
-        <div class="met-num">3</div>
-        <div>
-          <h3 data-i18n="met.3.title">Барьерная обработка</h3>
-          <p data-i18n="met.3.text">Создаём защитный барьер по периметру помещения и на путях миграции вредителей. Долгосрочная защита от повторного заражения.</p>
-          <div class="met-tags">
-            <span data-i18n="met.3.tag1">профилактика</span>
-            <span data-i18n="met.3.tag2">дома</span>
-            <span data-i18n="met.3.tag3">склады</span>
+        <div class="met">
+          <div class="met-num">3</div>
+          <div>
+            <h3 data-i18n="met.3.title">Барьерная обработка</h3>
+            <p data-i18n="met.3.text">Создаём защитный барьер по периметру помещения и на путях миграции вредителей. Долгосрочная защита от повторного заражения.</p>
+            <div class="met-tags">
+              <span data-i18n="met.3.tag1">профилактика</span>
+              <span data-i18n="met.3.tag2">дома</span>
+              <span data-i18n="met.3.tag3">склады</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="met">
-        <div class="met-num">4</div>
-        <div>
-          <h3 data-i18n="met.4.title">Гелевая обработка</h3>
-          <p data-i18n="met.4.text">Точечное нанесение приманки-геля в местах обитания насекомых. Без запаха, без распыления, безопасно для еды. Идеально для офисов и кухонь.</p>
-          <div class="met-tags">
-            <span data-i18n="met.4.tag1">без запаха</span>
-            <span data-i18n="met.4.tag2">офисы</span>
-            <span data-i18n="met.4.tag3">кафе</span>
+        <div class="met">
+          <div class="met-num">4</div>
+          <div>
+            <h3 data-i18n="met.4.title">Гелевая обработка</h3>
+            <p data-i18n="met.4.text">Точечное нанесение приманки-геля в местах обитания насекомых. Без запаха, без распыления, безопасно для еды. Идеально для офисов и кухонь.</p>
+            <div class="met-tags">
+              <span data-i18n="met.4.tag1">без запаха</span>
+              <span data-i18n="met.4.tag2">офисы</span>
+              <span data-i18n="met.4.tag3">кафе</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <p class="scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      <span data-i18n="met.hint">Листайте вправо, чтобы посмотреть все методы</span>
+    </p>
   </div>
 </section>
 
@@ -1119,27 +1171,15 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
       <div class="cert-grid" id="certScroll">
         <div class="cert" onclick="openLightbox('/images/cert-1.jpg')">
           <div class="cert-img"><img src="/images/cert-1.jpg" alt="Сертификат соответствия" loading="lazy"></div>
-          <div class="cert-name" data-i18n="cert.1">Сертификат соответствия</div>
         </div>
         <div class="cert" onclick="openLightbox('/images/cert-2.jpg')">
           <div class="cert-img"><img src="/images/cert-2.jpg" alt="Лицензия на дезинфекционную деятельность" loading="lazy"></div>
-          <div class="cert-name" data-i18n="cert.2">Лицензия на деятельность</div>
         </div>
         <div class="cert" onclick="openLightbox('/images/cert-3.jpg')">
           <div class="cert-img"><img src="/images/cert-3.jpg" alt="Сертификат препаратов" loading="lazy"></div>
-          <div class="cert-name" data-i18n="cert.3">Сертификат препаратов</div>
         </div>
         <div class="cert" onclick="openLightbox('/images/cert-4.jpg')">
           <div class="cert-img"><img src="/images/cert-4.jpg" alt="Свидетельство об обучении" loading="lazy"></div>
-          <div class="cert-name" data-i18n="cert.4">Свидетельство об обучении</div>
-        </div>
-        <div class="cert" onclick="openLightbox('/images/cert-5.jpg')">
-          <div class="cert-img"><img src="/images/cert-5.jpg" alt="Разрешение Минздрава" loading="lazy"></div>
-          <div class="cert-name" data-i18n="cert.5">Разрешение Минздрава РК</div>
-        </div>
-        <div class="cert" onclick="openLightbox('/images/cert-6.jpg')">
-          <div class="cert-img"><img src="/images/cert-6.jpg" alt="Аттестат специалиста" loading="lazy"></div>
-          <div class="cert-name" data-i18n="cert.6">Аттестат специалиста</div>
         </div>
       </div>
     </div>
@@ -1331,6 +1371,10 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
 
     <div class="foot-bot">
       <div>© <span id="year"></span> Sanitex. <span data-i18n="foot.rights">Все права защищены.</span></div>
+      <div class="foot-dev">
+        <span data-i18n="foot.dev">Разработка сайта —</span>
+        <a href="https://wa.me/77074534518" target="_blank" rel="noopener" class="dev-link">Anuken</a>
+      </div>
       <div><a href="#" data-i18n="foot.priv">Политика конфиденциальности</a> · <a href="#" data-i18n="foot.offer">Публичная оферта</a></div>
     </div>
   </div>
@@ -1516,6 +1560,7 @@ const i18n = {
     'met.3.tag1':'профилактика','met.3.tag2':'дома','met.3.tag3':'склады',
     'met.4.title':'Гелевая обработка','met.4.text':'Точечное нанесение приманки-геля в местах обитания насекомых. Без запаха, без распыления, безопасно для еды. Идеально для офисов и кухонь.',
     'met.4.tag1':'без запаха','met.4.tag2':'офисы','met.4.tag3':'кафе',
+    'met.hint':'Листайте вправо, чтобы посмотреть все методы',
     'why.eyebrow':'Преимущества','why.title':'Почему выбирают <span class="g">Sanitex</span>',
     'why.lead':'Восемь причин, по которым нам доверяют клиенты в Алматы — от частных квартир до ресторанов и промышленных объектов.',
     'why.1.t':'Выезд в день заявки','why.1.d':'Принимаем звонки 24/7, мастер выезжает в течение 1–3 часов по Алматы.',
@@ -1540,8 +1585,6 @@ const i18n = {
     'proc.5.t':'Гарантия','proc.5.d':'Контроль через 14 дней. Если нужно — повторная обработка бесплатно.',
     'cert.title':'Сертификаты и&nbsp;<span class="g">лицензии</span>',
     'cert.lead':'Все используемые препараты сертифицированы. Работаем по официальным разрешениям Министерства здравоохранения РК.',
-    'cert.1':'Сертификат соответствия','cert.2':'Лицензия на деятельность','cert.3':'Сертификат препаратов',
-    'cert.4':'Свидетельство об обучении','cert.5':'Разрешение Минздрава РК','cert.6':'Аттестат специалиста',
     'cert.hint':'Листайте вправо, чтобы посмотреть все документы',
     'b2b.eyebrow':'Юридическим лицам','b2b.title':'Работаем с&nbsp;<span class="g">организациями</span>',
     'b2b.lead':'Договоры на регулярное обслуживание для ресторанов, магазинов, складов, гостиниц, медучреждений. Безналичный расчёт, полный пакет документов.',
@@ -1584,6 +1627,7 @@ const i18n = {
     'foot.mode':'Режим: круглосуточно','foot.area':'Алматы и область',
     'foot.btn':'Оставить заявку','foot.rights':'Все права защищены.',
     'foot.priv':'Политика конфиденциальности','foot.offer':'Публичная оферта',
+    'foot.dev':'Разработка сайта —',
     'mbb.services':'Услуги','mbb.team':'Команда','mbb.call':'Звонок',
     'menu.main':'Основное','menu.popular':'Популярные услуги','menu.all':'Все 19 услуг',
     'menu.why':'Преимущества','menu.b2b':'Юрлицам',
@@ -1627,6 +1671,7 @@ const i18n = {
     'met.3.tag1':'профилактика','met.3.tag2':'үйлер','met.3.tag3':'қоймалар',
     'met.4.title':'Гель өңдеу','met.4.text':'Жәндіктер мекендейтін жерлерге гель жемін нүктелік жағу. Иіссіз, бүркусіз, тағамға қауіпсіз. Кеңселер мен асүйлер үшін тамаша.',
     'met.4.tag1':'иіссіз','met.4.tag2':'кеңселер','met.4.tag3':'кафелер',
+    'met.hint':'Барлық әдістерді көру үшін оңға қарай сырғытыңыз',
     'why.eyebrow':'Артықшылықтар','why.title':'Неліктен <span class="g">Sanitex</span> таңдайды',
     'why.lead':'Алматыдағы клиенттер бізге сенетін сегіз себеп — жеке пәтерлерден бастап мейрамханалар мен өндірістік нысандарға дейін.',
     'why.1.t':'Өтінім күні шығу','why.1.d':'Қоңырауларды 24/7 қабылдаймыз, маман Алматы бойынша 1–3 сағат ішінде шығады.',
@@ -1651,8 +1696,6 @@ const i18n = {
     'proc.5.t':'Кепілдік','proc.5.d':'14 күннен кейін бақылау. Қажет болса — қайта өңдеу тегін.',
     'cert.title':'Сертификаттар мен&nbsp;<span class="g">лицензиялар</span>',
     'cert.lead':'Барлық қолданылатын препараттар сертификатталған. ҚР Денсаулық сақтау министрлігінің ресми рұқсаттарымен жұмыс істейміз.',
-    'cert.1':'Сәйкестік сертификаты','cert.2':'Қызмет лицензиясы','cert.3':'Препараттар сертификаты',
-    'cert.4':'Оқыту туралы куәлік','cert.5':'ҚР Денсаулық сақтау рұқсаты','cert.6':'Маман аттестаты',
     'cert.hint':'Барлық құжаттарды көру үшін оңға қарай сырғытыңыз',
     'b2b.eyebrow':'Заңды тұлғаларға','b2b.title':'<span class="g">Ұйымдармен</span> жұмыс істейміз',
     'b2b.lead':'Мейрамханалар, дүкендер, қоймалар, қонақ үйлер, медициналық мекемелер үшін тұрақты қызмет көрсету шарттары. Қолма-қол ақшасыз есеп айырысу, толық құжаттар пакеті.',
@@ -1695,6 +1738,7 @@ const i18n = {
     'foot.mode':'Режим: тәулік бойы','foot.area':'Алматы және облысы',
     'foot.btn':'Өтінім қалдыру','foot.rights':'Барлық құқықтар қорғалған.',
     'foot.priv':'Құпиялылық саясаты','foot.offer':'Жария оферта',
+    'foot.dev':'Сайт әзірлеу —',
     'mbb.services':'Қызметтер','mbb.team':'Команда','mbb.call':'Қоңырау',
     'menu.main':'Негізгі','menu.popular':'Танымал қызметтер','menu.all':'Барлық 19 қызмет',
     'menu.why':'Артықшылықтар','menu.b2b':'Заңды тұлғаларға',
