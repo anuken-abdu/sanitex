@@ -434,6 +434,110 @@ nav.nav a:hover{color:var(--green-d);background:var(--green-soft)}
 .proc h3{font-size:15.5px;font-weight:800;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
 .proc p{font-size:13px;color:var(--ink-3);line-height:1.5}
 
+/* ========== CERTIFICATES (horizontal scroll) ========== */
+#certificates{background:var(--bg-2)}
+.cert-scroll-wrap{
+  position:relative;
+  margin:0 -24px;
+}
+@media (max-width:480px){.cert-scroll-wrap{margin:0 -16px}}
+
+.cert-grid{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  padding:8px 24px 22px;
+  scroll-padding-left:24px;
+  scroll-behavior:smooth;
+  scrollbar-width:thin;
+  scrollbar-color:var(--green) var(--bg-3);
+}
+@media (max-width:480px){.cert-grid{padding:8px 16px 18px;scroll-padding-left:16px}}
+.cert-grid::-webkit-scrollbar{height:6px}
+.cert-grid::-webkit-scrollbar-track{background:var(--bg-3);border-radius:3px}
+.cert-grid::-webkit-scrollbar-thumb{background:var(--green);border-radius:3px}
+.cert-grid::-webkit-scrollbar-thumb:hover{background:var(--green-d)}
+
+.cert{
+  flex:0 0 calc((100% - 54px)/4);
+  min-width:240px;
+  scroll-snap-align:start;
+  background:#fff;
+  border:1.5px solid var(--green);
+  border-radius:14px;
+  overflow:hidden;
+  cursor:zoom-in;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 4px 16px -4px rgba(0,166,81,.18);
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.cert:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 32px -8px rgba(0,166,81,.3);
+}
+@media (max-width:959px){.cert{flex:0 0 calc((100% - 36px)/3)}}
+@media (max-width:680px){.cert{flex:0 0 calc((100% - 18px)/2);min-width:0}}
+@media (max-width:480px){.cert{flex:0 0 78%}}
+
+.cert-img{
+  aspect-ratio:3/4;
+  background:var(--bg-2);
+  overflow:hidden;
+  position:relative;
+}
+.cert-img img{
+  width:100%;height:100%;
+  object-fit:contain;
+  padding:14px;
+  display:block;
+}
+.cert-name{
+  padding:12px 14px 14px;
+  font-size:13px;
+  font-weight:700;
+  color:var(--ink);
+  text-align:center;
+  line-height:1.3;
+  border-top:1px solid var(--green-soft);
+  background:#fff;
+}
+
+.scroll-hint{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-top:12px;
+  font-size:12.5px;
+  color:var(--mute);
+}
+.scroll-hint svg{width:16px;height:16px;color:var(--green)}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;inset:0;z-index:1300;
+  display:none;align-items:center;justify-content:center;
+  padding:20px;background:rgba(0,0,0,.92);
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:100%;max-height:90vh;
+  border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.lightbox-close{
+  position:absolute;top:20px;right:20px;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.15);color:#fff;
+  display:grid;place-items:center;cursor:pointer;
+  transition:background .15s ease;
+}
+.lightbox-close:hover{background:rgba(255,255,255,.25)}
+.lightbox-close svg{width:22px;height:22px}
+
 /* ========== B2B ========== */
 #b2b{background:var(--ink);color:#fff;position:relative;overflow:hidden}
 #b2b::before{
@@ -642,7 +746,7 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
       <a href="#services" data-i18n="nav.services">Услуги</a>
       <a href="#methods" data-i18n="nav.methods">Методы</a>
       <a href="#team" data-i18n="nav.team">Команда</a>
-      <a href="#process" data-i18n="nav.process">Как работаем</a>
+      <a href="#certificates" data-i18n="nav.certs">Документы</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
       <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
     </nav>
@@ -704,7 +808,7 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
     </div>
     <div class="tstrip-item">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-      <span data-i18n="trust.4">Гарантия до 12 мес.</span>
+      <span data-i18n="trust.4">Гарантия до 6 мес.</span>
     </div>
   </div>
 </div>
@@ -715,7 +819,7 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
     <div class="s-head">
       <div class="s-eyebrow" data-i18n="svc.eyebrow">Каталог услуг</div>
       <h2 data-i18n="svc.title">Уничтожаем <span class="g">любых вредителей</span></h2>
-      <p class="lead" data-i18n="svc.lead">18 направлений работы — от домашних насекомых до грызунов и опасных змей. С договором, гарантией и сертифицированными препаратами.</p>
+      <p class="lead" data-i18n="svc.lead">19 направлений работы — от домашних насекомых до грызунов и опасных змей. С договором, гарантией и сертифицированными препаратами.</p>
     </div>
 
     <div class="svc-grid">
@@ -790,6 +894,10 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
       <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Уничтожение%20моли%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
         <div class="svc-img"><img src="/images/svc-moth.jpg" alt="Моль" loading="lazy"></div>
         <div class="svc-name" data-i18n="svc.18.pre">Уничтожение<span class="strong" data-i18n="svc.18.main">моли</span></div>
+      </a>
+      <a class="svc" href="https://wa.me/77079062810?text=Здравствуйте%21%20Хочу%20заказать%20услугу%20%22Обработка%20участка%22.%20Подскажите%2C%20пожалуйста%2C%20стоимость%20и%20ближайшее%20время%20выезда." target="_blank" rel="noopener">
+        <div class="svc-img"><img src="/images/svc-yard.jpg" alt="Обработка участка" loading="lazy"></div>
+        <div class="svc-name" data-i18n="svc.19.pre">Обработка<span class="strong" data-i18n="svc.19.main">участка</span></div>
       </a>
     </div>
   </div>
@@ -882,7 +990,7 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
       </div>
       <div class="why">
         <div class="why-num">03</div>
-        <h3 data-i18n="why.3.t">Гарантия до 12 мес.</h3>
+        <h3 data-i18n="why.3.t">Гарантия до 6 мес.</h3>
         <p data-i18n="why.3.d">С договором. Если вредители появятся снова — повторная обработка бесплатно.</p>
       </div>
       <div class="why">
@@ -999,6 +1107,56 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
   </div>
 </section>
 
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <div class="wrap">
+    <div class="s-head">
+      <h2 data-i18n="cert.title">Сертификаты и&nbsp;<span class="g">лицензии</span></h2>
+      <p class="lead" data-i18n="cert.lead">Все используемые препараты сертифицированы. Работаем по&nbsp;официальным разрешениям Министерства здравоохранения РК.</p>
+    </div>
+
+    <div class="cert-scroll-wrap">
+      <div class="cert-grid" id="certScroll">
+        <div class="cert" onclick="openLightbox('/images/cert-1.jpg')">
+          <div class="cert-img"><img src="/images/cert-1.jpg" alt="Сертификат соответствия" loading="lazy"></div>
+          <div class="cert-name" data-i18n="cert.1">Сертификат соответствия</div>
+        </div>
+        <div class="cert" onclick="openLightbox('/images/cert-2.jpg')">
+          <div class="cert-img"><img src="/images/cert-2.jpg" alt="Лицензия на дезинфекционную деятельность" loading="lazy"></div>
+          <div class="cert-name" data-i18n="cert.2">Лицензия на деятельность</div>
+        </div>
+        <div class="cert" onclick="openLightbox('/images/cert-3.jpg')">
+          <div class="cert-img"><img src="/images/cert-3.jpg" alt="Сертификат препаратов" loading="lazy"></div>
+          <div class="cert-name" data-i18n="cert.3">Сертификат препаратов</div>
+        </div>
+        <div class="cert" onclick="openLightbox('/images/cert-4.jpg')">
+          <div class="cert-img"><img src="/images/cert-4.jpg" alt="Свидетельство об обучении" loading="lazy"></div>
+          <div class="cert-name" data-i18n="cert.4">Свидетельство об обучении</div>
+        </div>
+        <div class="cert" onclick="openLightbox('/images/cert-5.jpg')">
+          <div class="cert-img"><img src="/images/cert-5.jpg" alt="Разрешение Минздрава" loading="lazy"></div>
+          <div class="cert-name" data-i18n="cert.5">Разрешение Минздрава РК</div>
+        </div>
+        <div class="cert" onclick="openLightbox('/images/cert-6.jpg')">
+          <div class="cert-img"><img src="/images/cert-6.jpg" alt="Аттестат специалиста" loading="lazy"></div>
+          <div class="cert-name" data-i18n="cert.6">Аттестат специалиста</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      <span data-i18n="cert.hint">Листайте вправо, чтобы посмотреть все документы</span>
+    </p>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <img id="lightboxImg" src="" alt="Сертификат">
+</div>
+
 <!-- B2B -->
 <section id="b2b">
   <div class="wrap">
@@ -1052,7 +1210,7 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
       </div>
       <div class="faq-i">
         <button class="faq-q"><span data-i18n="faq.3.q">Какая гарантия?</span><span class="pl">+</span></button>
-        <div class="faq-a"><p data-i18n="faq.3.a">Гарантия до 12 месяцев с договором. Если в течение гарантийного срока вредители появятся снова — выезжаем повторно бесплатно при соблюдении наших рекомендаций.</p></div>
+        <div class="faq-a"><p data-i18n="faq.3.a">Гарантия до 6 месяцев с договором. Если в течение гарантийного срока вредители появятся снова — выезжаем повторно бесплатно при соблюдении наших рекомендаций.</p></div>
       </div>
       <div class="faq-i">
         <button class="faq-q"><span data-i18n="faq.4.q">Нужно ли освобождать квартиру?</span><span class="pl">+</span></button>
@@ -1226,6 +1384,7 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
         <a href="#why" onclick="closeBurger()"><span data-i18n="menu.why">Преимущества</span><span class="arr">→</span></a>
         <a href="#team" onclick="closeBurger()"><span data-i18n="nav.team">Наша команда</span><span class="arr">→</span></a>
         <a href="#process" onclick="closeBurger()"><span data-i18n="nav.process">Как мы работаем</span><span class="arr">→</span></a>
+        <a href="#certificates" onclick="closeBurger()"><span data-i18n="nav.certs">Документы и&nbsp;сертификаты</span><span class="arr">→</span></a>
         <a href="#b2b" onclick="closeBurger()"><span data-i18n="menu.b2b">Юрлицам</span><span class="arr">→</span></a>
         <a href="#faq" onclick="closeBurger()"><span data-i18n="nav.faq">FAQ</span><span class="arr">→</span></a>
         <a href="#contacts" onclick="closeBurger()"><span data-i18n="nav.contacts">Контакты</span><span class="arr">→</span></a>
@@ -1238,7 +1397,7 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
         <a href="#services" onclick="closeBurger()"><span data-i18n="svc.short.3">Дератизация (крысы, мыши)</span><span class="arr">→</span></a>
         <a href="#services" onclick="closeBurger()"><span data-i18n="svc.short.4">Уничтожение блох</span><span class="arr">→</span></a>
         <a href="#services" onclick="closeBurger()"><span data-i18n="svc.short.5">Уничтожение клещей</span><span class="arr">→</span></a>
-        <a href="#services" onclick="closeBurger()"><span data-i18n="menu.all">Все 18 услуг</span><span class="arr">→</span></a>
+        <a href="#services" onclick="closeBurger()"><span data-i18n="menu.all">Все 19 услуг</span><span class="arr">→</span></a>
       </div>
 
       <div class="bmenu-cta">
@@ -1330,13 +1489,13 @@ footer{background:var(--black);color:#a4a4a4;padding:56px 0 20px}
 /* ===== i18n DICTIONARY ===== */
 const i18n = {
   ru: {
-    'nav.services':'Услуги','nav.methods':'Методы','nav.team':'Команда','nav.process':'Как работаем','nav.faq':'FAQ','nav.contacts':'Контакты',
+    'nav.services':'Услуги','nav.methods':'Методы','nav.team':'Команда','nav.process':'Как работаем','nav.certs':'Документы','nav.faq':'FAQ','nav.contacts':'Контакты',
     'hero.title':'Дезинфекция в&nbsp;<span class="g">Алматы</span>',
     'hero.sub':'Профессиональное уничтожение вредителей с&nbsp;гарантией',
     'hero.btnWa':'Написать в WhatsApp','hero.btnCall':'Позвонить',
-    'trust.1':'Сертификаты СЭС','trust.2':'Договор и АВР','trust.3':'Безопасно для семьи','trust.4':'Гарантия до 12 мес.',
+    'trust.1':'Сертификаты СЭС','trust.2':'Договор и АВР','trust.3':'Безопасно для семьи','trust.4':'Гарантия до 6 мес.',
     'svc.eyebrow':'Каталог услуг','svc.title':'Уничтожаем <span class="g">любых вредителей</span>',
-    'svc.lead':'18 направлений работы — от домашних насекомых до грызунов и опасных змей. С договором, гарантией и сертифицированными препаратами.',
+    'svc.lead':'19 направлений работы — от домашних насекомых до грызунов и опасных змей. С договором, гарантией и сертифицированными препаратами.',
     'svc.1.pre':'Уничтожение','svc.1.main':'клопов','svc.2.pre':'Уничтожение','svc.2.main':'тараканов',
     'svc.3.pre':'Устранение','svc.3.main':'запахов','svc.4.pre':'Уничтожение','svc.4.main':'грибка',
     'svc.5.pre':'Уничтожение','svc.5.main':'плесени','svc.6.pre':'Выведение','svc.6.main':'кротов',
@@ -1346,6 +1505,7 @@ const i18n = {
     'svc.13.pre':'Уничтожение','svc.13.main':'пауков','svc.14.pre':'Уничтожение','svc.14.main':'клещей',
     'svc.15.pre':'Уничтожение','svc.15.main':'осиных гнёзд','svc.16.pre':'Уничтожение','svc.16.main':'муравьёв',
     'svc.17.pre':'Уничтожение','svc.17.main':'блох','svc.18.pre':'Уничтожение','svc.18.main':'моли',
+    'svc.19.pre':'Обработка','svc.19.main':'участка',
     'met.eyebrow':'Методы обработки','met.title':'Профессиональное <span class="g">оборудование</span>',
     'met.lead':'Подбираем метод индивидуально — в зависимости от типа вредителя, площади и особенностей помещения.',
     'met.1.title':'Горячий туман','met.1.text':'Препарат нагревается до 60°С и распыляется парогенератором. Микрокапли проникают во все щели и мебель. Эффективен против тараканов, клопов, блох.',
@@ -1360,7 +1520,7 @@ const i18n = {
     'why.lead':'Восемь причин, по которым нам доверяют клиенты в Алматы — от частных квартир до ресторанов и промышленных объектов.',
     'why.1.t':'Выезд в день заявки','why.1.d':'Принимаем звонки 24/7, мастер выезжает в течение 1–3 часов по Алматы.',
     'why.2.t':'Сертификаты СЭС','why.2.d':'Все препараты с разрешением Министерства здравоохранения РК.',
-    'why.3.t':'Гарантия до 12 мес.','why.3.d':'С договором. Если вредители появятся снова — повторная обработка бесплатно.',
+    'why.3.t':'Гарантия до 6 мес.','why.3.d':'С договором. Если вредители появятся снова — повторная обработка бесплатно.',
     'why.4.t':'Договор и документы','why.4.d':'Заключаем договор перед обработкой. Для юрлиц — АВР, ЭСФ.',
     'why.5.t':'Безопасно для семьи','why.5.d':'Препараты безопасны для детей и животных после проветривания.',
     'why.6.t':'Опытные мастера','why.6.d':'Стаж от 5 лет, спецобучение и аттестация по СанПиН.',
@@ -1378,6 +1538,11 @@ const i18n = {
     'proc.3.t':'Выезд','proc.3.d':'Мастер приезжает в день обращения с оборудованием и препаратами.',
     'proc.4.t':'Обработка','proc.4.d':'Профессиональная обработка с договором и актом выполненных работ.',
     'proc.5.t':'Гарантия','proc.5.d':'Контроль через 14 дней. Если нужно — повторная обработка бесплатно.',
+    'cert.title':'Сертификаты и&nbsp;<span class="g">лицензии</span>',
+    'cert.lead':'Все используемые препараты сертифицированы. Работаем по официальным разрешениям Министерства здравоохранения РК.',
+    'cert.1':'Сертификат соответствия','cert.2':'Лицензия на деятельность','cert.3':'Сертификат препаратов',
+    'cert.4':'Свидетельство об обучении','cert.5':'Разрешение Минздрава РК','cert.6':'Аттестат специалиста',
+    'cert.hint':'Листайте вправо, чтобы посмотреть все документы',
     'b2b.eyebrow':'Юридическим лицам','b2b.title':'Работаем с&nbsp;<span class="g">организациями</span>',
     'b2b.lead':'Договоры на регулярное обслуживание для ресторанов, магазинов, складов, гостиниц, медучреждений. Безналичный расчёт, полный пакет документов.',
     'b2b.l1':'Сертификаты СЭС и разрешения Минздрава РК',
@@ -1396,7 +1561,7 @@ const i18n = {
     'faq.2.q':'Сколько стоит обработка?',
     'faq.2.a':'Стоимость зависит от типа объекта, площади, вида вредителя и метода обработки. Чтобы получить точную цену — напишите в WhatsApp или позвоните: рассчитаем за пару минут.',
     'faq.3.q':'Какая гарантия?',
-    'faq.3.a':'Гарантия до 12 месяцев с договором. Если в течение гарантийного срока вредители появятся снова — выезжаем повторно бесплатно при соблюдении наших рекомендаций.',
+    'faq.3.a':'Гарантия до 6 месяцев с договором. Если в течение гарантийного срока вредители появятся снова — выезжаем повторно бесплатно при соблюдении наших рекомендаций.',
     'faq.4.q':'Нужно ли освобождать квартиру?',
     'faq.4.a':'Да, на время обработки (2–4 часа) и проветривания (2–3 часа). Перед обработкой нужно убрать продукты, накрыть аквариум, спрятать корм животных. Подробную инструкцию мастер пришлёт перед выездом.',
     'faq.5.q':'Будет ли запах после обработки?',
@@ -1420,7 +1585,7 @@ const i18n = {
     'foot.btn':'Оставить заявку','foot.rights':'Все права защищены.',
     'foot.priv':'Политика конфиденциальности','foot.offer':'Публичная оферта',
     'mbb.services':'Услуги','mbb.team':'Команда','mbb.call':'Звонок',
-    'menu.main':'Основное','menu.popular':'Популярные услуги','menu.all':'Все 18 услуг',
+    'menu.main':'Основное','menu.popular':'Популярные услуги','menu.all':'Все 19 услуг',
     'menu.why':'Преимущества','menu.b2b':'Юрлицам',
     'menu.cta':'Бесплатная консультация · ответим за 10 минут',
     'svc.short.1':'Уничтожение клопов','svc.short.2':'Уничтожение тараканов','svc.short.3':'Дератизация (крысы, мыши)',
@@ -1435,13 +1600,13 @@ const i18n = {
     'toast':'Заявка отправлена! Перезвоним в 10 минут',
   },
   kz: {
-    'nav.services':'Қызметтер','nav.methods':'Әдістер','nav.team':'Команда','nav.process':'Қалай жұмыс істейміз','nav.faq':'Сұрақтар','nav.contacts':'Байланыс',
+    'nav.services':'Қызметтер','nav.methods':'Әдістер','nav.team':'Команда','nav.process':'Қалай жұмыс істейміз','nav.certs':'Құжаттар','nav.faq':'Сұрақтар','nav.contacts':'Байланыс',
     'hero.title':'<span class="g">Алматыдағы</span> дезинфекция',
     'hero.sub':'Кепілдікпен зиянкестерді кәсіби жою',
     'hero.btnWa':'WhatsApp арқылы жазу','hero.btnCall':'Қоңырау шалу',
-    'trust.1':'СЭС сертификаттары','trust.2':'Шарт және АВР','trust.3':'Отбасыға қауіпсіз','trust.4':'12 айға дейінгі кепілдік',
+    'trust.1':'СЭС сертификаттары','trust.2':'Шарт және АВР','trust.3':'Отбасыға қауіпсіз','trust.4':'6 айға дейінгі кепілдік',
     'svc.eyebrow':'Қызметтер каталогы','svc.title':'<span class="g">Кез келген зиянкестерді</span> жоямыз',
-    'svc.lead':'18 бағыт — үй жәндіктерінен бастап кеміргіштер мен қауіпті жыландарға дейін. Шартпен, кепілдікпен және сертификатталған препараттармен.',
+    'svc.lead':'19 бағыт — үй жәндіктерінен бастап кеміргіштер мен қауіпті жыландарға дейін. Шартпен, кепілдікпен және сертификатталған препараттармен.',
     'svc.1.pre':'Жою','svc.1.main':'қандала','svc.2.pre':'Жою','svc.2.main':'тарақан',
     'svc.3.pre':'Жою','svc.3.main':'жағымсыз иіс','svc.4.pre':'Жою','svc.4.main':'саңырауқұлақ',
     'svc.5.pre':'Жою','svc.5.main':'зең','svc.6.pre':'Шығару','svc.6.main':'көртышқан',
@@ -1451,6 +1616,7 @@ const i18n = {
     'svc.13.pre':'Жою','svc.13.main':'өрмекші','svc.14.pre':'Жою','svc.14.main':'кене',
     'svc.15.pre':'Жою','svc.15.main':'ара ұясы','svc.16.pre':'Жою','svc.16.main':'құмырсқа',
     'svc.17.pre':'Жою','svc.17.main':'бүрге','svc.18.pre':'Жою','svc.18.main':'күйе',
+    'svc.19.pre':'Өңдеу','svc.19.main':'учаске',
     'met.eyebrow':'Өңдеу әдістері','met.title':'Кәсіби <span class="g">жабдық</span>',
     'met.lead':'Әдісті жеке таңдаймыз — зиянкес түріне, ауданға және үй-жайдың ерекшеліктеріне байланысты.',
     'met.1.title':'Ыстық тұман','met.1.text':'Препарат 60°С-қа дейін қыздырылады және бу генераторымен бүркіледі. Микротамшылар барлық саңылауларға және жиһазға енеді. Тарақан, қандала, бүргеге қарсы тиімді.',
@@ -1465,7 +1631,7 @@ const i18n = {
     'why.lead':'Алматыдағы клиенттер бізге сенетін сегіз себеп — жеке пәтерлерден бастап мейрамханалар мен өндірістік нысандарға дейін.',
     'why.1.t':'Өтінім күні шығу','why.1.d':'Қоңырауларды 24/7 қабылдаймыз, маман Алматы бойынша 1–3 сағат ішінде шығады.',
     'why.2.t':'СЭС сертификаттары','why.2.d':'Барлық препараттар ҚР Денсаулық сақтау министрлігінің рұқсатымен.',
-    'why.3.t':'12 айға дейінгі кепілдік','why.3.d':'Шартпен. Егер зиянкестер қайта пайда болса — қайта өңдеу тегін.',
+    'why.3.t':'6 айға дейінгі кепілдік','why.3.d':'Шартпен. Егер зиянкестер қайта пайда болса — қайта өңдеу тегін.',
     'why.4.t':'Шарт және құжаттар','why.4.d':'Өңдеу алдында шарт жасаймыз. Заңды тұлғаларға — АВР, ЭШФ.',
     'why.5.t':'Отбасыға қауіпсіз','why.5.d':'Препараттар желдетуден кейін балалар мен жануарларға қауіпсіз.',
     'why.6.t':'Тәжірибелі мамандар','why.6.d':'5 жылдан астам тәжірибе, арнайы оқыту және СанПиН аттестациясы.',
@@ -1483,6 +1649,11 @@ const i18n = {
     'proc.3.t':'Шығу','proc.3.d':'Маман өтінім күні жабдық пен препараттармен келеді.',
     'proc.4.t':'Өңдеу','proc.4.d':'Шартпен және орындалған жұмыстар актісімен кәсіби өңдеу.',
     'proc.5.t':'Кепілдік','proc.5.d':'14 күннен кейін бақылау. Қажет болса — қайта өңдеу тегін.',
+    'cert.title':'Сертификаттар мен&nbsp;<span class="g">лицензиялар</span>',
+    'cert.lead':'Барлық қолданылатын препараттар сертификатталған. ҚР Денсаулық сақтау министрлігінің ресми рұқсаттарымен жұмыс істейміз.',
+    'cert.1':'Сәйкестік сертификаты','cert.2':'Қызмет лицензиясы','cert.3':'Препараттар сертификаты',
+    'cert.4':'Оқыту туралы куәлік','cert.5':'ҚР Денсаулық сақтау рұқсаты','cert.6':'Маман аттестаты',
+    'cert.hint':'Барлық құжаттарды көру үшін оңға қарай сырғытыңыз',
     'b2b.eyebrow':'Заңды тұлғаларға','b2b.title':'<span class="g">Ұйымдармен</span> жұмыс істейміз',
     'b2b.lead':'Мейрамханалар, дүкендер, қоймалар, қонақ үйлер, медициналық мекемелер үшін тұрақты қызмет көрсету шарттары. Қолма-қол ақшасыз есеп айырысу, толық құжаттар пакеті.',
     'b2b.l1':'СЭС сертификаттары және ҚР Денсаулық сақтау рұқсаты',
@@ -1501,7 +1672,7 @@ const i18n = {
     'faq.2.q':'Өңдеу қанша тұрады?',
     'faq.2.a':'Құны нысан түріне, ауданға, зиянкес түріне және өңдеу әдісіне байланысты. Дәл бағаны алу үшін — WhatsApp-қа жазыңыз немесе қоңырау шалыңыз: бірнеше минутта есептейміз.',
     'faq.3.q':'Кепілдік қандай?',
-    'faq.3.a':'Шартпен 12 айға дейінгі кепілдік. Егер кепілдік мерзімі ішінде зиянкестер қайта пайда болса — біздің ұсыныстарымызды сақтаған жағдайда қайта тегін шығамыз.',
+    'faq.3.a':'Шартпен 6 айға дейінгі кепілдік. Егер кепілдік мерзімі ішінде зиянкестер қайта пайда болса — біздің ұсыныстарымызды сақтаған жағдайда қайта тегін шығамыз.',
     'faq.4.q':'Пәтерді босату қажет пе?',
     'faq.4.a':'Иә, өңдеу уақытында (2–4 сағат) және желдету уақытында (2–3 сағат). Өңдеу алдында өнімдерді жинау, аквариумды жабу, жануарлардың жемін жасыру қажет. Толық нұсқаулықты маман шығу алдында жібереді.',
     'faq.5.q':'Өңдеуден кейін иіс бола ма?',
@@ -1525,7 +1696,7 @@ const i18n = {
     'foot.btn':'Өтінім қалдыру','foot.rights':'Барлық құқықтар қорғалған.',
     'foot.priv':'Құпиялылық саясаты','foot.offer':'Жария оферта',
     'mbb.services':'Қызметтер','mbb.team':'Команда','mbb.call':'Қоңырау',
-    'menu.main':'Негізгі','menu.popular':'Танымал қызметтер','menu.all':'Барлық 18 қызмет',
+    'menu.main':'Негізгі','menu.popular':'Танымал қызметтер','menu.all':'Барлық 19 қызмет',
     'menu.why':'Артықшылықтар','menu.b2b':'Заңды тұлғаларға',
     'menu.cta':'Тегін кеңес · 10 минут ішінде жауап береміз',
     'svc.short.1':'Қандала жою','svc.short.2':'Тарақан жою','svc.short.3':'Дератизация (егеуқұйрық, тышқан)',
@@ -1584,6 +1755,21 @@ function closeBurger(){
 }
 window.closeBurger = closeBurger;
 
+/* ===== LIGHTBOX ===== */
+function openLightbox(src){
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  img.src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
+
 /* ===== FAQ ===== */
 document.querySelectorAll('.faq-i').forEach(item => {
   item.querySelector('.faq-q').addEventListener('click', () => {
@@ -1618,6 +1804,7 @@ document.addEventListener('keydown', e => {
     document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
     document.body.style.overflow = '';
     closeBurger();
+    closeLightbox();
   }
 });
 
